@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">TPMovilesFinal2C</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_contrato">Contrato</string>
+    <string name="menu_inmueble">Inmueble</string>
+    <string name="menu_perfil">Perfil</string>
+    <string name="menu_inquilino">Inquilino</string>
+    <string name="menu_logout">Logout</string>
+
+    <string name="etEmail">Ingrese su Email</string>
+    <string name="etContraseña">Ingrese su Contraseña</string>
+    <string name="btIngresar">Ingresar</string>
+
+    <string name="btEditar">Editar</string>
+    <string name="btGuardar">Guardar</string>
+    <string name="etId">Id</string>
+    <string name="etNombre">Nombre</string>
+    <string name="etDni">DNI</string>
+    <string name="etApellido">Apellido</string>
+    <string name="etTelefono">Telefono</string>
+
+</resources>

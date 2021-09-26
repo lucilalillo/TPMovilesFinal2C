@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.tpmovilesfinal2c.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/nav_perfil"
+        android:name="com.example.tpmovilesfinal2c.ui.perfil.PerfilFragment"
+        android:label="@string/menu_perfil"
+        tools:layout="@layout/perfil_fragment" />
+    <fragment
+        android:id="@+id/nav_inmueble"
+        android:name="com.example.tpmovilesfinal2c.ui.inmueble.InmuebleFragment"
+        android:label="@string/menu_inmueble"
+        tools:layout="@layout/fragment_inmueble" />
+    <fragment
+        android:id="@+id/nav_inquilino"
+        android:name="com.example.tpmovilesfinal2c.ui.inquilino.InquilinoFragment"
+        android:label="@string/menu_inquilino"
+        tools:layout="@layout/inquilino_fragment" />
+    <fragment
+        android:id="@+id/nav_contrato"
+        android:name="com.example.tpmovilesfinal2c.ui.contrato.ContratoFragment"
+        android:label="contrato"
+        tools:layout="@layout/fragment_contrato" />
+    <fragment
+        android:id="@+id/nav_logout"
+        android:name="com.example.tpmovilesfinal2c.ui.logout.LogoutFragment"
+        android:label="@string/menu_logout"
+        tools:layout="@layout/logout_fragment" />
+</navigation>
