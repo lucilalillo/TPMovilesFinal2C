@@ -25,5 +25,6 @@
     <string name="etDni">DNI</string>
     <string name="etApellido">Apellido</string>
     <string name="etTelefono">Telefono</string>
+    <string name="cbEstado">Disponible</string>
 
 </resources>

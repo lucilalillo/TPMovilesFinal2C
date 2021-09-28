@@ -32,7 +32,7 @@
     <fragment
         android:id="@+id/nav_contrato"
         android:name="com.example.tpmovilesfinal2c.ui.contrato.ContratoFragment"
-        android:label="contrato"
+        android:label="Contrato"
         tools:layout="@layout/fragment_contrato" />
     <fragment
         android:id="@+id/nav_logout"
@@ -42,7 +42,7 @@
     <fragment
         android:id="@+id/inmuebleDetalleFragment"
         android:name="com.example.tpmovilesfinal2c.ui.inmueble.InmuebleDetalleFragment"
-        android:label="inmueble_detalle_fragment"
+        android:label="Detalle de Inmueble"
         tools:layout="@layout/inmueble_detalle_fragment" >
         <action
             android:id="@+id/action_inmuebleDetalleFragment_to_nav_inmueble"

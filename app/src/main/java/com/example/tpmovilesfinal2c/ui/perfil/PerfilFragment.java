@@ -45,7 +45,7 @@ public class PerfilFragment extends Fragment {
         pvm.getPropietario().observe(getViewLifecycleOwner(), new Observer<Propietario>() {
             @Override
             public void onChanged(Propietario propietario) {
-                etId.setText(" "+propietario.getId());
+                etId.setText(propietario.getId()+"");
                 etDni.setText(propietario.getDni().toString());
                 etNombre.setText(propietario.getNombre());
                 etApellido.setText(propietario.getApellido());

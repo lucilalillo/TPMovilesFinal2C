@@ -39,7 +39,7 @@ public class InmuebleDetalleFragment extends Fragment {
         mViewModel = new ViewModelProvider(this).get(InmuebleDetalleViewModel.class);
 
         View root = inflater.inflate(R.layout.inmueble_detalle_fragment, container, false);
-       // inicializarVista(root);
+        inicializarVista(root);
         mViewModel.getInmueble().observe(getViewLifecycleOwner(), new Observer<Inmueble>() {
             @Override
             public void onChanged(Inmueble inmueble) {
@@ -47,10 +47,10 @@ public class InmuebleDetalleFragment extends Fragment {
                         .load(inmueble.getImagen())
                         .diskCacheStrategy(DiskCacheStrategy.ALL)
                         .into(ivFotoDetInmu);
-                tvDetId.setText(""+inmueble.getIdInmueble());
+               // tvDetId.setText(""+inmueble.getIdInmueble());
                 tvDetDir.setText(inmueble.getDireccion());
                 tvdetUso.setText(inmueble.getUso());
-                tvDetAmb.setText(inmueble.getAmbientes());
+                tvDetAmb.setText(inmueble.getAmbientes()+"");
                 tvDetTipo.setText(inmueble.getTipo());
                 tvDetPrecio.setText(String.valueOf(inmueble.getPrecio()));
                 cbEstado.setChecked(inmueble.isEstado());
@@ -66,8 +66,8 @@ public class InmuebleDetalleFragment extends Fragment {
         return root;
     }
 
-    /*private void inicializarVista(View root){
-        ivFotoDetInmu = root.findViewById(R.id.ivFotoInmu);
+    private void inicializarVista(View root){
+        ivFotoDetInmu = root.findViewById(R.id.ivFotoDetInmu);
         tvDetDir = root.findViewById(R.id.tvDetDir);
         tvdetUso = root.findViewById(R.id.tvDetUso);
         tvDetAmb = root.findViewById(R.id.tvDetAmb);
@@ -75,7 +75,7 @@ public class InmuebleDetalleFragment extends Fragment {
         tvDetPrecio = root.findViewById(R.id.tvDetPrecio);
         cbEstado = root.findViewById(R.id.cbEstado);
 
-    }*/
+    }
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
