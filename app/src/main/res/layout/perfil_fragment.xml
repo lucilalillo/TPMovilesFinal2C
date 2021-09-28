@@ -11,38 +11,41 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <ImageView
+            android:id="@+id/ivProp"
+            android:layout_width="93dp"
+            android:layout_height="74dp"
+            android:layout_marginTop="44dp"
+            android:layout_marginEnd="100dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@tools:sample/avatars" />
+
         <EditText
             android:id="@+id/etId"
-            android:layout_width="77dp"
+            android:layout_width="108dp"
             android:layout_height="48dp"
-            android:layout_marginStart="48dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginStart="52dp"
+            android:layout_marginTop="68dp"
             android:ems="10"
             android:hint="@string/etId"
             android:inputType="textPersonName"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageView
-            android:id="@+id/ivProp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/etId"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:src="@tools:sample/avatars" />
-
         <EditText
             android:id="@+id/etDni"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="80dp"
+            android:layout_marginTop="36dp"
             android:ems="10"
             android:enabled="false"
             android:hint="@string/etDni"
             android:inputType="textPersonName"
             android:minHeight="48dp"
+            android:visibility="visible"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/etId" />
 
@@ -56,6 +59,7 @@
             android:hint="@string/etNombre"
             android:inputType="textPersonName"
             android:minHeight="48dp"
+            android:visibility="visible"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.502"
             app:layout_constraintStart_toStartOf="parent"
@@ -71,6 +75,7 @@
             android:hint="@string/etApellido"
             android:inputType="textPersonName"
             android:minHeight="48dp"
+            android:visibility="visible"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.502"
             app:layout_constraintStart_toStartOf="parent"
@@ -86,6 +91,7 @@
             android:hint="@string/etEmail"
             android:inputType="textPersonName"
             android:minHeight="48dp"
+            android:visibility="visible"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.502"
             app:layout_constraintStart_toStartOf="parent"
@@ -102,6 +108,7 @@
             android:inputType="textPersonName"
             android:minHeight="48dp"
             android:text="Name"
+            android:visibility="visible"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.502"
             app:layout_constraintStart_toStartOf="parent"
@@ -118,6 +125,7 @@
             android:inputType="textPersonName"
             android:minHeight="48dp"
             android:text="Name"
+            android:visibility="visible"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.502"
             app:layout_constraintStart_toStartOf="parent"
@@ -129,7 +137,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="44dp"
             android:text="@string/btGuardar"
-            android:visibility="invisible"
+            android:visibility="visible"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
@@ -146,5 +154,7 @@
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/etTel" />
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

@@ -17,6 +17,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.example.tpmovilesfinal2c.Modelo.Propietario;
 import com.example.tpmovilesfinal2c.R;
@@ -58,7 +59,6 @@ public class PerfilFragment extends Fragment {
         pvm.getEditable().observe(getViewLifecycleOwner(), new Observer<Boolean>() {
             @Override
             public void onChanged(Boolean aBoolean) {
-                //etId.setEnabled(aBoolean);
                 etDni.setEnabled(aBoolean);
                 etNombre.setEnabled(aBoolean);
                 etApellido.setEnabled(aBoolean);
@@ -82,7 +82,6 @@ public class PerfilFragment extends Fragment {
                 btGuardar.setVisibility(integer);
             }
         });
-
         pvm.obtenerPropietarioActual();
         return vistaPerfil;
     }

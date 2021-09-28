@@ -1,5 +1,6 @@
 package com.example.tpmovilesfinal2c.ui.inmueble;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,25 +12,40 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.tpmovilesfinal2c.Modelo.Inmueble;
 import com.example.tpmovilesfinal2c.R;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class InmuebleFragment extends Fragment {
 
     private InmuebleViewModel inmuebleViewModel;
+    private RecyclerView rvInmuebles;
+    private InmueblesAdapter adapter;
+    private Context context;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
+        View root = inflater.inflate(R.layout.fragment_inmueble, container, false);
         inmuebleViewModel =
                 new ViewModelProvider(this).get(InmuebleViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_inmueble, container, false);
-        final TextView textView = root.findViewById(R.id.text_slideshow);
-        inmuebleViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+        rvInmuebles = (RecyclerView) root.findViewById(R.id.rvInmuebles);
+        context = root.getContext();
+        inmuebleViewModel.getInmuebles().observe(getViewLifecycleOwner(), new Observer<ArrayList<Inmueble>>() {
             @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
+            public void onChanged(ArrayList<Inmueble> inmuebles) {
+                GridLayoutManager gridLayoutManager= new GridLayoutManager(context, 2, GridLayoutManager.VERTICAL, false);
+                rvInmuebles.setLayoutManager(gridLayoutManager);
+                adapter = new InmueblesAdapter(inmuebles,root,getLayoutInflater());
+                rvInmuebles.setAdapter(adapter);
             }
         });
+        inmuebleViewModel.mostrarInmuebles();
+
         return root;
     }
 }
