@@ -26,7 +26,6 @@ public class InmuebleFragment extends Fragment {
     private InmuebleViewModel inmuebleViewModel;
     private RecyclerView rvInmuebles;
     private InmueblesAdapter adapter;
-    private Context context;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -34,11 +33,11 @@ public class InmuebleFragment extends Fragment {
         inmuebleViewModel =
                 new ViewModelProvider(this).get(InmuebleViewModel.class);
         rvInmuebles = (RecyclerView) root.findViewById(R.id.rvInmuebles);
-        context = root.getContext();
+
         inmuebleViewModel.getInmuebles().observe(getViewLifecycleOwner(), new Observer<ArrayList<Inmueble>>() {
             @Override
             public void onChanged(ArrayList<Inmueble> inmuebles) {
-                GridLayoutManager gridLayoutManager= new GridLayoutManager(context, 2, GridLayoutManager.VERTICAL, false);
+                GridLayoutManager gridLayoutManager= new GridLayoutManager(getContext(), 2, GridLayoutManager.VERTICAL, false);
                 rvInmuebles.setLayoutManager(gridLayoutManager);
                 adapter = new InmueblesAdapter(inmuebles,root,getLayoutInflater());
                 rvInmuebles.setAdapter(adapter);

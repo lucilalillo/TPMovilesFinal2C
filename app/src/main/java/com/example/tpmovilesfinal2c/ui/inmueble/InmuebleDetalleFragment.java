@@ -25,7 +25,6 @@ import com.example.tpmovilesfinal2c.R;
 public class InmuebleDetalleFragment extends Fragment {
 
     private InmuebleDetalleViewModel mViewModel;
-    private Context context;
     private ImageView ivFotoDetInmu;
     private TextView tvDetDir, tvdetUso, tvDetAmb, tvDetTipo, tvDetPrecio, tvDetId;
     private CheckBox cbEstado;
@@ -40,7 +39,6 @@ public class InmuebleDetalleFragment extends Fragment {
         mViewModel = new ViewModelProvider(this).get(InmuebleDetalleViewModel.class);
 
         View root = inflater.inflate(R.layout.inmueble_detalle_fragment, container, false);
-        context = root.getContext();
        // inicializarVista(root);
         mViewModel.getInmueble().observe(getViewLifecycleOwner(), new Observer<Inmueble>() {
             @Override
