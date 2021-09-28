@@ -45,7 +45,7 @@ public class LogoutFragment extends Fragment {
                 .setNegativeButton("No", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        Navigation.findNavController(getActivity(), R.id.nav_home).navigate(R.id.nav_home);
+                        Navigation.findNavController(getActivity(), R.id.nav_host_fragment).navigate(R.id.nav_home);
                     }
                 }).show();
     }
