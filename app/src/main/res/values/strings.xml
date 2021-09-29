@@ -27,4 +27,14 @@
     <string name="etTelefono">Telefono</string>
     <string name="cbEstado">Disponible</string>
 
+    <string name="tvlabelCod">Código</string>
+    <string name="tvlabelNom">Nombre</string>
+    <string name="tvlabelAp">Apellido</string>
+    <string name="tvlabelDni">Dni</string>
+    <string name="tvlabelMail">Mail</string>
+    <string name="tvlabelTel">Teléfono</string>
+    <string name="tvlabelGar">Garante</string>
+    <string name="tvlabelGarTel">Teléfono Garante</string>
+    <string name="tvInf">Información del Inquilino</string>
+
 </resources>

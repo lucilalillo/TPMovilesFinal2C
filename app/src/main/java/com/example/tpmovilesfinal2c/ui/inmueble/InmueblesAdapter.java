@@ -18,6 +18,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.example.tpmovilesfinal2c.Modelo.Inmueble;
+import com.example.tpmovilesfinal2c.Modelo.Inquilino;
 import com.example.tpmovilesfinal2c.R;
 
 import java.util.ArrayList;

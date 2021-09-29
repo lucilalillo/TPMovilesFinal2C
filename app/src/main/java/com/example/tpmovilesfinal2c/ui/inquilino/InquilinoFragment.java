@@ -1,5 +1,6 @@
 package com.example.tpmovilesfinal2c.ui.inquilino;
 
+import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.os.Bundle;
@@ -7,16 +8,24 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.tpmovilesfinal2c.Modelo.Inmueble;
+import com.example.tpmovilesfinal2c.Modelo.Inquilino;
 import com.example.tpmovilesfinal2c.R;
+
+import java.util.ArrayList;
 
 public class InquilinoFragment extends Fragment {
 
-    private InquilinoViewModel mViewModel;
+    private InquilinoViewModel inquilinoViewModel;
+    private RecyclerView rvInquilinos;
+    private InquilinosAdapter adapter;
 
     public static InquilinoFragment newInstance() {
         return new InquilinoFragment();
@@ -25,13 +34,27 @@ public class InquilinoFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.inquilino_fragment, container, false);
+        View root = inflater.inflate(R.layout.inquilino_fragment, container, false);
+        inquilinoViewModel = new ViewModelProvider(this).get(InquilinoViewModel.class);
+        rvInquilinos = (RecyclerView) root.findViewById(R.id.rvInquilinos);
+
+        inquilinoViewModel.getInmueble().observe(getViewLifecycleOwner(), new Observer<ArrayList<Inmueble>>() {
+            @Override
+            public void onChanged(ArrayList<Inmueble> inmuebles) {
+                GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 2, GridLayoutManager.VERTICAL, false);
+                rvInquilinos.setLayoutManager(gridLayoutManager);
+                adapter = new InquilinosAdapter(inmuebles, root, getLayoutInflater());
+                rvInquilinos.setAdapter(adapter);
+            }
+        });
+        inquilinoViewModel.mostrarInmuebles();
+        return root;
     }
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        mViewModel = new ViewModelProvider(this).get(InquilinoViewModel.class);
+        inquilinoViewModel = new ViewModelProvider(this).get(InquilinoViewModel.class);
         // TODO: Use the ViewModel
     }
 
