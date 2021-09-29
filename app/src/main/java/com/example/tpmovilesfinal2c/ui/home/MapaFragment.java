@@ -10,10 +10,12 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.tpmovilesfinal2c.R;
+import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
@@ -32,9 +34,19 @@ public class MapaFragment extends Fragment {
          */
         @Override
         public void onMapReady(GoogleMap googleMap) {
-            LatLng sydney = new LatLng(-34, 151);
-            googleMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-            googleMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+            LatLng Inmobiliaria = new LatLng(-33.237590, -66.349156);
+            CameraPosition camPos = new CameraPosition.Builder()
+                    .target(Inmobiliaria)
+                    .zoom(19)
+                    .bearing(45)
+                    .tilt(70)
+                    .build();
+
+            CameraUpdate camUpd = CameraUpdateFactory.newCameraPosition(camPos);
+
+            googleMap.addMarker(new MarkerOptions().position(Inmobiliaria).title("Inmobiliaria Lillo"));
+            googleMap.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
+            googleMap.animateCamera(camUpd);
         }
     };
 
