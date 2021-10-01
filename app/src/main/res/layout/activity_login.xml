@@ -8,8 +8,8 @@
 
     <ImageView
         android:id="@+id/ivFoto"
-        android:layout_width="106dp"
-        android:layout_height="87dp"
+        android:layout_width="132dp"
+        android:layout_height="122dp"
         android:layout_marginTop="36dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
