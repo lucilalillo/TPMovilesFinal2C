@@ -37,7 +37,11 @@
         android:id="@+id/nav_contrato"
         android:name="com.example.tpmovilesfinal2c.ui.contrato.ContratoFragment"
         android:label="Contrato"
-        tools:layout="@layout/fragment_contrato" />
+        tools:layout="@layout/fragment_contrato" >
+        <action
+            android:id="@+id/action_nav_contrato_to_contratoDetalleFragment"
+            app:destination="@id/contratoDetalleFragment" />
+    </fragment>
     <fragment
         android:id="@+id/nav_logout"
         android:name="com.example.tpmovilesfinal2c.ui.logout.LogoutFragment"
@@ -65,5 +69,26 @@
         <action
             android:id="@+id/action_inquilinoDetalleFragment_to_nav_inquilino"
             app:destination="@id/nav_inquilino" />
+    </fragment>
+    <fragment
+        android:id="@+id/contratoDetalleFragment"
+        android:name="com.example.tpmovilesfinal2c.ui.contrato.ContratoDetalleFragment"
+        android:label="contrato_detalle_fragment"
+        tools:layout="@layout/contrato_detalle_fragment" >
+        <action
+            android:id="@+id/action_contratoDetalleFragment_to_nav_contrato"
+            app:destination="@id/nav_contrato" />
+        <action
+            android:id="@+id/action_contratoDetalleFragment_to_pagosFragment"
+            app:destination="@id/pagosFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/pagosFragment"
+        android:name="com.example.tpmovilesfinal2c.ui.contrato.PagosFragment"
+        android:label="pagos_fragment"
+        tools:layout="@layout/pagosfragment" >
+        <action
+            android:id="@+id/action_pagosFragment_to_contratoDetalleFragment"
+            app:destination="@id/contratoDetalleFragment" />
     </fragment>
 </navigation>

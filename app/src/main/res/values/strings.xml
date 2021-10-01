@@ -36,5 +36,21 @@
     <string name="tvlabelGar">Garante</string>
     <string name="tvlabelGarTel">Teléfono Garante</string>
     <string name="tvInf">Información del Inquilino</string>
+    <string name="btVer">Ver</string>
+
+    <string name="tvConInf">Informacion del Contrato</string>
+    <string name="tvConCod">Código de Contrato</string>
+    <string name="tvConFecInicio">Fecha De Inicio</string>
+    <string name="tvConFecFin">Fecha de Finalizacion</string>
+    <string name="tvConMont">Monto de Alquiler</string>
+    <string name="tvConInq">Inquilino</string>
+    <string name="tvConInmu">Inmueble</string>
+    <string name="btPagos">Pagos</string>
+
+    <string name="tv1">Código de Pagos</string>
+    <string name="tv2">Número de Pago</string>
+    <string name="tv3">Código de Contrato</string>
+    <string name="tv4">Importe</string>
+    <string name="tv5">Fecha de Pago</string>
 
 </resources>

@@ -62,6 +62,7 @@ public class Login extends AppCompatActivity implements SensorEventListener {
         tvError = findViewById(R.id.tvError);
         //foto es para un posible logo de la inmobiliaria
         foto = findViewById(R.id.ivFoto);
+        foto.setImageResource(R.drawable.logo);
 
         btIngresar = findViewById(R.id.btIngresar);
         btIngresar.setOnClickListener(new View.OnClickListener() {

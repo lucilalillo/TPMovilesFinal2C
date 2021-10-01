@@ -3,18 +3,27 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Usuario/AndroidStudioProjects/TPMovilesFinal2C/app/src/main/res/drawable/side_nav_bar.xml" value="0.2203125" />
         <entry key="..\:/Users/Usuario/AndroidStudioProjects/TPMovilesFinal2C/app/src/main/res/layout/activity_login.xml" value="0.17346014492753623" />
+        <entry key="..\:/Users/Usuario/AndroidStudioProjects/TPMovilesFinal2C/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Usuario/AndroidStudioProjects/TPMovilesFinal2C/app/src/main/res/layout/app_bar_main.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Usuario/AndroidStudioProjects/TPMovilesFinal2C/app/src/main/res/layout/content_main.xml" value="0.12409420289855072" />
+        <entry key="..\:/Users/Usuario/AndroidStudioProjects/TPMovilesFinal2C/app/src/main/res/layout/contrato_detalle_fragment.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Usuario/AndroidStudioProjects/TPMovilesFinal2C/app/src/main/res/layout/fragment_contrato.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Usuario/AndroidStudioProjects/TPMovilesFinal2C/app/src/main/res/layout/fragment_home.xml" value="0.3442622950819672" />
         <entry key="..\:/Users/Usuario/AndroidStudioProjects/TPMovilesFinal2C/app/src/main/res/layout/fragment_inmueble.xml" value="0.38476374156219867" />
         <entry key="..\:/Users/Usuario/AndroidStudioProjects/TPMovilesFinal2C/app/src/main/res/layout/fragment_mapa.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Usuario/AndroidStudioProjects/TPMovilesFinal2C/app/src/main/res/layout/inmueble_detalle_fragment.xml" value="0.20427305888483585" />
         <entry key="..\:/Users/Usuario/AndroidStudioProjects/TPMovilesFinal2C/app/src/main/res/layout/inquilino_detalle_fragment.xml" value="0.20427305888483585" />
         <entry key="..\:/Users/Usuario/AndroidStudioProjects/TPMovilesFinal2C/app/src/main/res/layout/inquilino_fragment.xml" value="0.20427305888483585" />
+        <entry key="..\:/Users/Usuario/AndroidStudioProjects/TPMovilesFinal2C/app/src/main/res/layout/item_contrato.xml" value="0.25" />
         <entry key="..\:/Users/Usuario/AndroidStudioProjects/TPMovilesFinal2C/app/src/main/res/layout/item_inmueble.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Usuario/AndroidStudioProjects/TPMovilesFinal2C/app/src/main/res/layout/item_inquilino.xml" value="0.2" />
+        <entry key="..\:/Users/Usuario/AndroidStudioProjects/TPMovilesFinal2C/app/src/main/res/layout/item_pagos.xml" value="0.22" />
         <entry key="..\:/Users/Usuario/AndroidStudioProjects/TPMovilesFinal2C/app/src/main/res/layout/logout_fragment.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Usuario/AndroidStudioProjects/TPMovilesFinal2C/app/src/main/res/layout/nav_header_main.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Usuario/AndroidStudioProjects/TPMovilesFinal2C/app/src/main/res/layout/pagos_fragment.xml" value="0.20427305888483585" />
+        <entry key="..\:/Users/Usuario/AndroidStudioProjects/TPMovilesFinal2C/app/src/main/res/layout/pagosfragment.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Usuario/AndroidStudioProjects/TPMovilesFinal2C/app/src/main/res/layout/perfil_fragment.xml" value="0.1" />
         <entry key="..\:/Users/Usuario/AndroidStudioProjects/TPMovilesFinal2C/app/src/main/res/menu/activity_main_drawer.xml" value="0.20416666666666666" />
       </map>
