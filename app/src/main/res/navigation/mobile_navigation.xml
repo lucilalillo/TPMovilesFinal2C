@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/nav_home"
         android:name="com.example.tpmovilesfinal2c.ui.home.MapaFragment"
-        android:label="@string/menu_home"
+        android:label="Ubicación"
         tools:layout="@layout/fragment_mapa" />
     <fragment
         android:id="@+id/nav_perfil"
@@ -64,7 +64,7 @@
     <fragment
         android:id="@+id/inquilinoDetalleFragment"
         android:name="com.example.tpmovilesfinal2c.ui.inquilino.InquilinoDetalleFragment"
-        android:label="inquilino_detalle_fragment"
+        android:label="Inquilino"
         tools:layout="@layout/inquilino_detalle_fragment" >
         <action
             android:id="@+id/action_inquilinoDetalleFragment_to_nav_inquilino"
@@ -73,7 +73,7 @@
     <fragment
         android:id="@+id/contratoDetalleFragment"
         android:name="com.example.tpmovilesfinal2c.ui.contrato.ContratoDetalleFragment"
-        android:label="contrato_detalle_fragment"
+        android:label="Contrato"
         tools:layout="@layout/contrato_detalle_fragment" >
         <action
             android:id="@+id/action_contratoDetalleFragment_to_nav_contrato"
@@ -85,7 +85,7 @@
     <fragment
         android:id="@+id/pagosFragment"
         android:name="com.example.tpmovilesfinal2c.ui.contrato.PagosFragment"
-        android:label="pagos_fragment"
+        android:label="Detalle de Pagos"
         tools:layout="@layout/pagosfragment" >
         <action
             android:id="@+id/action_pagosFragment_to_contratoDetalleFragment"
