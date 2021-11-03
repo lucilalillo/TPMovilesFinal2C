@@ -1,16 +1,25 @@
 package com.example.tpmovilesfinal2c.ui.inquilino;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.widget.Toast;
 
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
+import com.example.tpmovilesfinal2c.Modelo.Contrato;
 import com.example.tpmovilesfinal2c.Modelo.Inmueble;
 import com.example.tpmovilesfinal2c.Modelo.Inquilino;
 import com.example.tpmovilesfinal2c.Request.ApiClient;
 
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 public class InquilinoDetalleViewModel extends ViewModel {
-    MutableLiveData<Inquilino> inquilino;
+    private MutableLiveData<Inquilino> inquilino;
+    private Context contexto;
 
     public InquilinoDetalleViewModel() {
 
@@ -25,8 +34,9 @@ public class InquilinoDetalleViewModel extends ViewModel {
     }
 
     public void mostrarInquilino(Bundle bundle){
-        Inmueble i = (Inmueble) bundle.getSerializable("inmueble");
-        ApiClient api = ApiClient.getApi();
-        inquilino.setValue(api.obtenerInquilino(i));
+        Inquilino i = (Inquilino) bundle.getSerializable("inquilino");
+        //ApiClient api = ApiClient.getApi();
+        inquilino.setValue(i);
+
     }
 }

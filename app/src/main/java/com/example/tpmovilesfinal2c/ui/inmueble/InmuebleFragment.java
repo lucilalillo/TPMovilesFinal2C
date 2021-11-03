@@ -34,9 +34,9 @@ public class InmuebleFragment extends Fragment {
                 new ViewModelProvider(this).get(InmuebleViewModel.class);
         rvInmuebles = (RecyclerView) root.findViewById(R.id.rvInmuebles);
 
-        inmuebleViewModel.getInmuebles().observe(getViewLifecycleOwner(), new Observer<ArrayList<Inmueble>>() {
+        inmuebleViewModel.getInmuebles().observe(getViewLifecycleOwner(), new Observer<List<Inmueble>>() {
             @Override
-            public void onChanged(ArrayList<Inmueble> inmuebles) {
+            public void onChanged(List<Inmueble> inmuebles) {
                 GridLayoutManager gridLayoutManager= new GridLayoutManager(getContext(), 2, GridLayoutManager.VERTICAL, false);
                 rvInmuebles.setLayoutManager(gridLayoutManager);
                 adapter = new InmueblesAdapter(inmuebles,root,getLayoutInflater());

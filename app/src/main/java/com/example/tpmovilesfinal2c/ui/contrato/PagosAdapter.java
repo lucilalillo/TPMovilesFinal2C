@@ -12,13 +12,14 @@ import com.example.tpmovilesfinal2c.Modelo.Pago;
 import com.example.tpmovilesfinal2c.R;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class PagosAdapter extends RecyclerView.Adapter<PagosAdapter.ViewHolder> {
-    private ArrayList<Pago> lista;
+    private List<Pago> lista;
     private View root;
     private LayoutInflater inflater;
 
-    public PagosAdapter(ArrayList<Pago> lista, View root, LayoutInflater inflater) {
+    public PagosAdapter(List<Pago> lista, View root, LayoutInflater inflater) {
         this.lista = lista;
         this.root = root;
         this.inflater = inflater;

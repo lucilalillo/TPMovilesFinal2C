@@ -32,7 +32,7 @@ public class Login extends AppCompatActivity implements SensorEventListener {
     private float last_x, last_y, last_z;
     private static final int SHAKE_THRESHOLD = 600;
     private String phoneNumber = "1234";
-    LoginViewModel lvm;
+    private LoginViewModel lvm;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

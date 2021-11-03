@@ -1,5 +1,6 @@
 package com.example.tpmovilesfinal2c.ui.contrato;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,18 +15,21 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.example.tpmovilesfinal2c.Modelo.Contrato;
 import com.example.tpmovilesfinal2c.Modelo.Inmueble;
 import com.example.tpmovilesfinal2c.R;
 import com.example.tpmovilesfinal2c.ui.inquilino.InquilinosAdapter;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ContratosAdapter extends RecyclerView.Adapter<ContratosAdapter.ViewHolder> {
-    private ArrayList<Inmueble> lista;
+    private List<Contrato> lista;
     private View root;
     private LayoutInflater inflater;
+    private Context context;
 
-    public ContratosAdapter(ArrayList<Inmueble> lista, View root, LayoutInflater inflater) {
+    public ContratosAdapter(List<Contrato> lista, View root, LayoutInflater inflater) {
         this.lista = lista;
         this.root = root;
         this.inflater = inflater;
@@ -40,17 +44,18 @@ public class ContratosAdapter extends RecyclerView.Adapter<ContratosAdapter.View
 
     @Override
     public void onBindViewHolder(@NonNull ContratosAdapter.ViewHolder holder, int position) {
-        Inmueble i = lista.get(position);
-        Glide.with(root.getContext())
-                .load(lista.get(position).getImagen())
+        Contrato i = lista.get(position);
+        Inmueble inmu = i.getInmueble();
+        holder.tvDirec.setText(inmu.getDireccion());
+        /*Glide.with(context)
+                .load("https://192.168.0.101:45457"+inmu.getImagen())
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
-                .into(holder.ivfotoInq);
-        holder.tvDirec.setText(lista.get(position).getDireccion());
+                .into(holder.ivfotoInq);*/
         holder.btInqVer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Bundle bundle = new Bundle();
-                bundle.putSerializable("inmueble", i);
+                bundle.putSerializable("contrato", i);
                 Navigation.findNavController(root).navigate(R.id.contratoDetalleFragment, bundle);
             }
         });

@@ -21,7 +21,7 @@ import com.example.tpmovilesfinal2c.ui.inmueble.InmuebleDetalleViewModel;
 public class InquilinoDetalleFragment extends Fragment {
 
     private InquilinoDetalleViewModel inquilinoDetalleViewModel;
-    private TextView tvCod, tvNombre, tvApellido, tvDni, tvMail, tvTel, tvGarante, tvtelGar;
+    private TextView tvCod, tvNombre, tvApellido, tvDni, tvMail, tvTel;
 
     public static InquilinoDetalleFragment newInstance() {
         return new InquilinoDetalleFragment();
@@ -36,14 +36,13 @@ public class InquilinoDetalleFragment extends Fragment {
         inquilinoDetalleViewModel.getInquilino().observe(getViewLifecycleOwner(), new Observer<Inquilino>() {
             @Override
             public void onChanged(Inquilino inquilino) {
-                tvCod.setText(inquilino.getIdInquilino()+"");
+                //tvCod.setText(inquilino.getIdInquilino()+"");
                 tvNombre.setText(inquilino.getNombre());
                 tvApellido.setText(inquilino.getApellido());
                 tvDni.setText(inquilino.getDNI()+"");
                 tvMail.setText(inquilino.getEmail());
                 tvTel.setText(inquilino.getTelefono());
-                tvGarante.setText(inquilino.getNombreGarante());
-                tvtelGar.setText(inquilino.getTelefonoGarante());
+
             }
         });
         inquilinoDetalleViewModel.mostrarInquilino(getArguments());
@@ -51,14 +50,12 @@ public class InquilinoDetalleFragment extends Fragment {
     }
 
     public void inicializarVista(View root){
-        tvCod = root.findViewById(R.id.tvCod);
+        //tvCod = root.findViewById(R.id.tvCod);
         tvNombre = root.findViewById(R.id.tvDetInqNombre);
         tvApellido = root.findViewById(R.id.tvDetInqAp);
         tvDni = root.findViewById(R.id.tvDetInqDni);
         tvMail = root.findViewById(R.id.tvDetInqMail);
         tvTel = root.findViewById(R.id.tvDetInqTel);
-        tvGarante = root.findViewById(R.id.tvDetInqGarante);
-        tvtelGar = root.findViewById(R.id.tvDetInqGarTel);
     }
 
     @Override

@@ -4,24 +4,24 @@ import java.io.Serializable;
 
 public class Inquilino implements Serializable {
     private int idInquilino;
-    private Long DNI;
+    private String dni;
     private String nombre;
     private String apellido;
     private String lugarDeTrabajo;
-    private String email;
+    private String mail;
     private String telefono;
     private String nombreGarante;
     private String telefonoGarante;
 
     public Inquilino() {}
 
-    public Inquilino(int idInquilino, Long DNI, String nombre, String apellido, String lugarDeTrabajo, String email, String telefono, String nombreGarante, String telefonoGarante) {
+    public Inquilino(int idInquilino, String dni, String nombre, String apellido, String lugarDeTrabajo, String email, String telefono, String nombreGarante, String telefonoGarante) {
         this.idInquilino = idInquilino;
-        this.DNI = DNI;
+        this.dni = dni;
         this.nombre = nombre;
         this.apellido = apellido;
         this.lugarDeTrabajo = lugarDeTrabajo;
-        this.email = email;
+        this.mail = email;
         this.telefono = telefono;
         this.nombreGarante = nombreGarante;
         this.telefonoGarante = telefonoGarante;
@@ -35,12 +35,12 @@ public class Inquilino implements Serializable {
         this.idInquilino = idInquilino;
     }
 
-    public Long getDNI() {
-        return DNI;
+    public String getDNI() {
+        return dni;
     }
 
-    public void setDNI(Long DNI) {
-        this.DNI = DNI;
+    public void setDNI(String DNI) {
+        this.dni = DNI;
     }
 
     public String getNombre() {
@@ -68,11 +68,11 @@ public class Inquilino implements Serializable {
     }
 
     public String getEmail() {
-        return email;
+        return mail;
     }
 
     public void setEmail(String email) {
-        this.email = email;
+        this.mail = email;
     }
 
     public String getTelefono() {

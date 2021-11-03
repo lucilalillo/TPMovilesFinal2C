@@ -15,11 +15,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.tpmovilesfinal2c.Modelo.Contrato;
 import com.example.tpmovilesfinal2c.Modelo.Inmueble;
 import com.example.tpmovilesfinal2c.Modelo.Inquilino;
 import com.example.tpmovilesfinal2c.R;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class InquilinoFragment extends Fragment {
 
@@ -38,12 +40,12 @@ public class InquilinoFragment extends Fragment {
         inquilinoViewModel = new ViewModelProvider(this).get(InquilinoViewModel.class);
         rvInquilinos = (RecyclerView) root.findViewById(R.id.rvInquilinos);
 
-        inquilinoViewModel.getInmueble().observe(getViewLifecycleOwner(), new Observer<ArrayList<Inmueble>>() {
+        inquilinoViewModel.getContrato().observe(getViewLifecycleOwner(), new Observer<List<Contrato>>() {
             @Override
-            public void onChanged(ArrayList<Inmueble> inmuebles) {
+            public void onChanged(List<Contrato> contratos) {
                 GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 2, GridLayoutManager.VERTICAL, false);
                 rvInquilinos.setLayoutManager(gridLayoutManager);
-                adapter = new InquilinosAdapter(inmuebles, root, getLayoutInflater());
+                adapter = new InquilinosAdapter(contratos, root, getLayoutInflater());
                 rvInquilinos.setAdapter(adapter);
             }
         });

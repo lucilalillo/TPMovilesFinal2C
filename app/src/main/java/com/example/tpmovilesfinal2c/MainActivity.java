@@ -1,11 +1,14 @@
 package com.example.tpmovilesfinal2c;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.example.tpmovilesfinal2c.Modelo.Propietario;
 import com.example.tpmovilesfinal2c.ui.inmueble.InmueblesAdapter;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -66,7 +69,11 @@ public class MainActivity extends AppCompatActivity {
         TextView nombre = header.findViewById(R.id.tvNombre);
         TextView mail = header.findViewById(R.id.tvMail);
         Propietario p = (Propietario) getIntent().getBundleExtra("propietario").getSerializable("propietario");
-        foto.setImageResource(p.getAvatar());
+        /*Log.d("foto", "http://192.168.0.114:45455/"+p.getAvatar());
+        Glide.with(header.getContext())
+                .load("http://192.168.0.114:45455"+p.getAvatar())
+                .diskCacheStrategy(DiskCacheStrategy.ALL)
+                .into(foto);*/
         nombre.setText(p.getNombre());
         mail.setText(p.getEmail());
     }

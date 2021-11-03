@@ -1,38 +1,39 @@
 package com.example.tpmovilesfinal2c.Modelo;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 
 public class Pago implements Serializable {
-    private int idPago;
-    private int numero;
+    private int id;
+    private int numPago;
     private Contrato contrato;
     private double importe;
-    private String fechaDePago;
+    private String fechaPago;
 
     public Pago() {}
 
     public Pago(int idPago, int numero, Contrato contrato, double importe, String fechaDePago) {
-        this.idPago = idPago;
-        this.numero = numero;
+        this.id = idPago;
+        this.numPago = numero;
         this.contrato = contrato;
         this.importe = importe;
-        this.fechaDePago = fechaDePago;
+        this.fechaPago = fechaDePago;
     }
 
     public int getIdPago() {
-        return idPago;
+        return id;
     }
 
     public void setIdPago(int idPago) {
-        this.idPago = idPago;
+        this.id = idPago;
     }
 
     public int getNumero() {
-        return numero;
+        return numPago;
     }
 
     public void setNumero(int numero) {
-        this.numero = numero;
+        this.numPago = numero;
     }
 
     public Contrato getContrato() {
@@ -52,10 +53,10 @@ public class Pago implements Serializable {
     }
 
     public String getFechaDePago() {
-        return fechaDePago;
+        return fechaPago;
     }
 
     public void setFechaDePago(String fechaDePago) {
-        this.fechaDePago = fechaDePago;
+        this.fechaPago = fechaDePago;
     }
 }

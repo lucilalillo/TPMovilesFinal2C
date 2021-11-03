@@ -14,10 +14,12 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.tpmovilesfinal2c.Modelo.Contrato;
 import com.example.tpmovilesfinal2c.Modelo.Inmueble;
 import com.example.tpmovilesfinal2c.R;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ContratoFragment extends Fragment {
 
@@ -33,12 +35,12 @@ public class ContratoFragment extends Fragment {
         rvContratos = root.findViewById(R.id.rvContratos);
 
 
-        contratoViewModel.getInmuebles().observe(getViewLifecycleOwner(), new Observer<ArrayList<Inmueble>>() {
+        contratoViewModel.getContratos().observe(getViewLifecycleOwner(), new Observer<List<Contrato>>() {
             @Override
-            public void onChanged(ArrayList<Inmueble> inmuebles) {
+            public void onChanged(List<Contrato> con) {
                 GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 2, GridLayoutManager.VERTICAL, false);
                 rvContratos.setLayoutManager(gridLayoutManager);
-                adapter = new ContratosAdapter(inmuebles, root, getLayoutInflater());
+                adapter = new ContratosAdapter(con, root, getLayoutInflater());
                 rvContratos.setAdapter(adapter);
             }
         });

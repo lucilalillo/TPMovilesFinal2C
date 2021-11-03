@@ -19,55 +19,34 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tvlabelCod"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="56dp"
-        android:text="@string/tvlabelCod"
-        app:layout_constraintEnd_toStartOf="@+id/tvCod"
-        app:layout_constraintHorizontal_bias="0.295"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvInf" />
-
-    <TextView
-        android:id="@+id/tvCod"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="56dp"
-        android:layout_marginEnd="132dp"
-        android:text="TextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvInf" />
-
-    <TextView
         android:id="@+id/tvlabelNom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="52dp"
         android:text="@string/tvlabelNom"
         app:layout_constraintEnd_toStartOf="@+id/tvDetInqNombre"
-        app:layout_constraintHorizontal_bias="0.346"
+        app:layout_constraintHorizontal_bias="0.35"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvlabelCod" />
+        app:layout_constraintTop_toBottomOf="@+id/tvInf" />
 
     <TextView
         android:id="@+id/tvDetInqNombre"
         android:layout_width="68dp"
         android:layout_height="21dp"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="120dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="108dp"
         android:text="TextView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvCod" />
+        app:layout_constraintTop_toBottomOf="@+id/tvInf" />
 
     <TextView
         android:id="@+id/tvlabelAp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="64dp"
         android:text="@string/tvlabelAp"
         app:layout_constraintEnd_toStartOf="@+id/tvDetInqAp"
-        app:layout_constraintHorizontal_bias="0.368"
+        app:layout_constraintHorizontal_bias="0.349"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvlabelNom" />
 
@@ -75,8 +54,8 @@
         android:id="@+id/tvDetInqAp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
-        android:layout_marginEnd="128dp"
+        android:layout_marginTop="84dp"
+        android:layout_marginEnd="124dp"
         android:text="TextView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/tvDetInqNombre" />
@@ -96,8 +75,8 @@
         android:id="@+id/tvDetInqDni"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
-        android:layout_marginEnd="124dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="116dp"
         android:text="TextView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvDetInqAp" />
@@ -127,10 +106,10 @@
         android:id="@+id/tvlabelTel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="48dp"
         android:text="@string/tvlabelTel"
         app:layout_constraintEnd_toStartOf="@+id/tvDetInqTel"
-        app:layout_constraintHorizontal_bias="0.34"
+        app:layout_constraintHorizontal_bias="0.333"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvlabelMail" />
 
@@ -144,49 +123,4 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvDetInqMail" />
 
-    <TextView
-        android:id="@+id/tvlabelGarante"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="52dp"
-        android:text="@string/tvlabelGar"
-        app:layout_constraintEnd_toStartOf="@+id/tvDetInqGarante"
-        app:layout_constraintHorizontal_bias="0.368"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvlabelTel" />
-
-    <TextView
-        android:id="@+id/tvDetInqGarante"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="76dp"
-        android:layout_marginEnd="124dp"
-        android:text="TextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/tvDetInqTel" />
-
-    <TextView
-        android:id="@+id/tvlabelGarTel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="72dp"
-        android:text="@string/tvlabelGarTel"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/tvDetInqGarTel"
-        app:layout_constraintHorizontal_bias="0.368"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvlabelGarante"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/tvDetInqGarTel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="84dp"
-        android:layout_marginEnd="124dp"
-        android:text="TextView"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/tvDetInqGarante"
-        app:layout_constraintVertical_bias="0.082" />
 </androidx.constraintlayout.widget.ConstraintLayout>

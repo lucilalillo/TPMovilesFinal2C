@@ -6,22 +6,22 @@ import java.util.Objects;
 public class Propietario implements Serializable {
 
     private int id;
-    private Long dni;
+    private String dni;
     private String nombre;
     private String apellido;
-    private String email;
-    private String contraseña;
+    private String mail;
+    private String claveProp;
     private String telefono;
-    private int avatar;
+    private String avatar;
 
     public Propietario() {}
-    public Propietario(int id, Long dni, String nombre, String apellido, String email, String contraseña, String telefono, int avatar) {
+    public Propietario(int id, String dni, String nombre, String apellido, String email, String contraseña, String telefono, String avatar) {
         this.id = id;
         this.dni = dni;
         this.nombre = nombre;
         this.apellido = apellido;
-        this.email = email;
-        this.contraseña = contraseña;
+        this.mail = email;
+        this.claveProp = contraseña;
         this.telefono = telefono;
         this.avatar=avatar;
     }
@@ -34,13 +34,11 @@ public class Propietario implements Serializable {
         this.id = id;
     }
 
-    public Long getDni() {
+    public String getDni() {
         return dni;
     }
 
-    public void setDni(Long dni) {
-        this.dni = dni;
-    }
+    public void setDni(String dni) { this.dni = dni; }
 
     public String getNombre() {
         return nombre;
@@ -59,19 +57,19 @@ public class Propietario implements Serializable {
     }
 
     public String getEmail() {
-        return email;
+        return mail;
     }
 
     public void setEmail(String email) {
-        this.email = email;
+        this.mail = email;
     }
 
     public String getContraseña() {
-        return contraseña;
+        return claveProp;
     }
 
     public void setContraseña(String contraseña) {
-        this.contraseña = contraseña;
+        this.claveProp = contraseña;
     }
 
     public String getTelefono() {
@@ -82,11 +80,11 @@ public class Propietario implements Serializable {
         this.telefono = telefono;
     }
 
-    public int getAvatar() {
+    public String getAvatar() {
         return avatar;
     }
 
-    public void setAvatar(int avatar) {
+    public void setAvatar(String avatar) {
         this.avatar = avatar;
     }
 

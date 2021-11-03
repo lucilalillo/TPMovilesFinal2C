@@ -1,5 +1,11 @@
 package com.example.tpmovilesfinal2c.Request;
 
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.util.Log;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
 import com.example.tpmovilesfinal2c.Modelo.Contrato;
 import com.example.tpmovilesfinal2c.Modelo.Inmueble;
 import com.example.tpmovilesfinal2c.Modelo.Inquilino;
@@ -8,17 +14,101 @@ import com.example.tpmovilesfinal2c.Modelo.Propietario;
 import com.example.tpmovilesfinal2c.R;
 
 import java.util.ArrayList;
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
+import retrofit2.http.Body;
+import retrofit2.http.Field;
+import retrofit2.http.FormUrlEncoded;
+import retrofit2.http.GET;
+import retrofit2.http.Header;
+import retrofit2.http.POST;
+import retrofit2.http.PUT;
+import retrofit2.http.Path;
+;
 
 public class ApiClient {
-    private ArrayList<Propietario> propietarios=new ArrayList<>();
+    /*private ArrayList<Propietario> propietarios=new ArrayList<>();
     private ArrayList<Inquilino> inquilinos=new ArrayList<>();
     private ArrayList<Inmueble> inmuebles=new ArrayList<>();
     private ArrayList<Contrato> contratos=new ArrayList<>();
     private ArrayList<Pago> pagos=new ArrayList<>();
     private static Propietario usuarioActual=null;
-    private static ApiClient api=null;
+    private static ApiClient api=null;*/
 
-    private ApiClient(){
+    private static final String URLBASE="http://192.168.0.114:45455/Api/";//Url que me da conveyor
+    private static  PostInterface postInterface;
+    private static SharedPreferences sharedPreferences;
+
+    public static SharedPreferences conectar(Context context){
+        if (sharedPreferences==null){
+            sharedPreferences = context.getSharedPreferences("token.dat",0);
+        }
+        return  sharedPreferences;
+    }
+
+    public static PostInterface getMyApiClient(){
+
+        Gson gson = new GsonBuilder().setLenient().create();
+        Retrofit retrofit=new Retrofit.Builder()
+                .baseUrl(URLBASE)
+                .addConverterFactory(GsonConverterFactory.create(gson))
+                .build();
+
+        postInterface=retrofit.create(PostInterface.class);
+
+        return postInterface;
+    }
+
+    public interface  PostInterface{
+
+        //Servicios que usamos en propietarios
+        @FormUrlEncoded
+        @POST("Propietarios/Login")
+        Call<String> login(@Field("Email") String email, @Field("Clave") String clave);
+
+        //servicio que devuelve un propietario
+        @GET("Propietarios")
+        Call<Propietario> obtenerPropietario(@Header("Authorization") String token);
+
+        //servicio que edita los datos del propietario
+        @PUT("Propietarios")
+        Call<Propietario> editarPropietario(@Header("Authorization") String token, @Body Propietario propietario);
+
+        //obtiene listado de inmuebles
+        @GET("Inmuebles")
+        Call<List<Inmueble>> listaInmuebles(@Header("Authorization") String token);
+
+        //cambiar estado disponible del inmueble
+        @PUT("Inmuebles/{id}")
+        Call<Inmueble> editarEstado(@Header("Authorization") String token, @Path("id")int id );
+
+        //devuelve los inmuebles alquilados
+        @GET("Contratos")
+        Call<List<Contrato>> obtenerInmueblesAlquilados(@Header("Authorization") String token);
+
+        //devuelve un inquilino
+        @GET("Inquilinos")
+        Call<Inquilino> obtenerInquilino(@Header("Authorization") String token, @Body Inquilino inquilino);
+
+        //este servicio devuelve una lista de inmuebles alquilados del usuario logueado
+        //se usa en la vista Contrato
+        @GET("Inmuebles/Alquilados")
+        Call<List<Inmueble>> obtenerPropiedadesAlquiladas(@Header("Authorization")  String token);
+
+        @GET("Contratos/ObtenerContrato")
+        Call<Contrato> obtenerContratoVigente(@Header("Authorization")  String token, @Path ("id") int idCon);
+
+
+
+        @GET("Pagos/{id}")
+        Call<List<Pago>> obtenerPagos(@Header("Authorization") String token, @Path ("id") int idCon);
+
+    }
+
+    /*private ApiClient(){
         //Nos conectamos a nuestra "Base de Datos"
         cargaDatos();
     }
@@ -159,9 +249,8 @@ public class ApiClient {
         pagos.add(new Pago(900,1,uno,17000,"10/02/2020"));
         pagos.add(new Pago(901,2,uno,17000,"10/03/2020"));
         pagos.add(new Pago(902,3,uno,17000,"10/04/2020"));
-
+*/
 
 
 
     }
-}

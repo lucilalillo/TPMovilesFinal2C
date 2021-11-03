@@ -2,6 +2,8 @@ package com.example.tpmovilesfinal2c.ui.inmueble;
 
 import android.app.Application;
 import android.content.Context;
+import android.content.SharedPreferences;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
@@ -16,9 +18,13 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 public class InmuebleViewModel extends AndroidViewModel {
 
-    private MutableLiveData<ArrayList<Inmueble>> inmuebles;
+    private MutableLiveData<List<Inmueble>> inmuebles;
     private Context context;
 
 
@@ -28,7 +34,7 @@ public class InmuebleViewModel extends AndroidViewModel {
 
     }
 
-    public LiveData<ArrayList<Inmueble>> getInmuebles() {
+    public LiveData<List<Inmueble>> getInmuebles() {
         if (inmuebles == null) {
             inmuebles = new MutableLiveData<>();
         }
@@ -37,7 +43,23 @@ public class InmuebleViewModel extends AndroidViewModel {
     }
 
     public void mostrarInmuebles() {
-        ApiClient api = ApiClient.getApi();
-        inmuebles.setValue(api.obtnerPropiedades());
+        SharedPreferences sp = ApiClient.conectar(context);
+        String t = sp.getString("token", "vacio");
+        Call<List<Inmueble>> lista = ApiClient.getMyApiClient().listaInmuebles(t);
+        lista.enqueue(new Callback<List<Inmueble>>() {
+            @Override
+            public void onResponse(Call<List<Inmueble>> call, Response<List<Inmueble>> response) {
+                if(response.isSuccessful()){
+                    inmuebles.postValue(response.body());
+                }else{
+                    Toast.makeText(context, "No se encontraron Inmuebles", Toast.LENGTH_LONG).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<Inmueble>> call, Throwable t) {
+                Toast.makeText(context, "Se produjo un error", Toast.LENGTH_LONG).show();
+            }
+        });
     }
 }

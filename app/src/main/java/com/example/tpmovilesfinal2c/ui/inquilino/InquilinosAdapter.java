@@ -1,5 +1,7 @@
 package com.example.tpmovilesfinal2c.ui.inquilino;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.example.tpmovilesfinal2c.Modelo.Contrato;
 import com.example.tpmovilesfinal2c.Modelo.Inmueble;
 import com.example.tpmovilesfinal2c.Modelo.Inquilino;
 import com.example.tpmovilesfinal2c.R;
@@ -21,14 +24,18 @@ import com.example.tpmovilesfinal2c.Request.ApiClient;
 import com.example.tpmovilesfinal2c.ui.inmueble.InmueblesAdapter;
 
 import java.util.ArrayList;
+import java.util.List;
+
+import retrofit2.Call;
 
 public class InquilinosAdapter extends RecyclerView.Adapter <InquilinosAdapter.ViewHolder> {
 
-    private ArrayList<Inmueble> lista;
+    private List<Contrato> lista;
     private View root;
     private LayoutInflater inflater;
+    private Context context;
 
-    public InquilinosAdapter(ArrayList<Inmueble> lista, View root, LayoutInflater inflater) {
+    public InquilinosAdapter(List<Contrato> lista, View root, LayoutInflater inflater) {
         this.lista = lista;
         this.root = root;
         this.inflater = inflater;
@@ -43,17 +50,20 @@ public class InquilinosAdapter extends RecyclerView.Adapter <InquilinosAdapter.V
 
     @Override
     public void onBindViewHolder(@NonNull InquilinosAdapter.ViewHolder holder, int position) {
-        Inmueble i = lista.get(position);
-        Glide.with(root.getContext())
-                .load(lista.get(position).getImagen())
+        Contrato i = lista.get(position);
+        Inmueble inmu = i.getInmueble();
+        Inquilino inq = i.getInquilino();
+        holder.tvDirec.setText(inmu.getDireccion());
+        /*Glide.with(context)
+                .load("https://192.168.0.110:45455"+inmu.getImagen())
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
-                .into(holder.ivfotoInq);
-        holder.tvDirec.setText(lista.get(position).getDireccion());
+                .into(holder.ivfotoInq);*/
+
         holder.btInqVer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Bundle bundle = new Bundle();
-                bundle.putSerializable("inmueble", i);
+                bundle.putSerializable("inquilino", inq);
                 Navigation.findNavController(root).navigate(R.id.inquilinoDetalleFragment, bundle);
             }
         });

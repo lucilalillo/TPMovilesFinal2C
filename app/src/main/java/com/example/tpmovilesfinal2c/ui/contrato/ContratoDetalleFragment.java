@@ -41,8 +41,8 @@ public class ContratoDetalleFragment extends Fragment {
             @Override
             public void onChanged(Contrato contrato) {
                 cod.setText(contrato.getIdContrato()+"");
-                fecInicio.setText(contrato.getFechaInicio());
-                fecFin.setText(contrato.getFechaFin());
+                fecInicio.setText(contrato.getFechaInicio()+"");
+                fecFin.setText(contrato.getFechaFin()+"");
                 monto.setText(contrato.getMontoAlquiler()+"");
                 nombreInq.setText(contrato.getInquilino().getNombre()+" "+contrato.getInquilino().getApellido());
                 direcInmu.setText(contrato.getInmueble().getDireccion());

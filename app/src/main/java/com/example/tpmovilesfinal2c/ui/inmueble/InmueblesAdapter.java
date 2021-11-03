@@ -22,13 +22,14 @@ import com.example.tpmovilesfinal2c.Modelo.Inquilino;
 import com.example.tpmovilesfinal2c.R;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class InmueblesAdapter extends RecyclerView.Adapter <InmueblesAdapter.ViewHolder> {
-    private ArrayList<Inmueble> lista;
+    private List<Inmueble> lista;
     private View root;
     private LayoutInflater inflater;
 
-    public InmueblesAdapter(ArrayList<Inmueble> lista, View root, LayoutInflater inflater) {
+    public InmueblesAdapter(List<Inmueble> lista, View root, LayoutInflater inflater) {
         this.lista = lista;
         this.root= root;
         this.inflater = inflater;
@@ -47,10 +48,10 @@ public class InmueblesAdapter extends RecyclerView.Adapter <InmueblesAdapter.Vie
         Inmueble i = lista.get(position);
         holder.tvDireccion.setText(lista.get(position).getDireccion());
         holder.tvprecio.setText(lista.get(position).getPrecio()+"");
-        Glide.with(root.getContext())
+       /* Glide.with(root.getContext())
                 .load(lista.get(position).getImagen())
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
-                .into(holder.ivFotoInmu);
+                .into(holder.ivFotoInmu);*/
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

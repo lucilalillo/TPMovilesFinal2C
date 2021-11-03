@@ -19,15 +19,17 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.example.tpmovilesfinal2c.Modelo.Propietario;
 import com.example.tpmovilesfinal2c.R;
 
 public class PerfilFragment extends Fragment {
 
     private PerfilViewModel pvm;
-    EditText etId, etDni, etNombre, etApellido, etMail, etPass, etTel;
-    Button btGuardar, btEditar;
-    ImageView ivProp;
+    private EditText etId, etDni, etNombre, etApellido, etMail, etPass, etTel;
+    private Button btGuardar, btEditar;
+    private ImageView ivProp;
 
     public static PerfilFragment newInstance() {
         return new PerfilFragment();
@@ -46,13 +48,17 @@ public class PerfilFragment extends Fragment {
             @Override
             public void onChanged(Propietario propietario) {
                 etId.setText(propietario.getId()+"");
-                etDni.setText(propietario.getDni().toString());
+                etDni.setText(propietario.getDni());
                 etNombre.setText(propietario.getNombre());
                 etApellido.setText(propietario.getApellido());
                 etMail.setText(propietario.getEmail());
                 etTel.setText(propietario.getTelefono());
                 etPass.setText(propietario.getContraseña());
-                ivProp.setImageResource(propietario.getAvatar());
+                Glide.with(vistaPerfil.getContext())
+                        .load("http://169.254.113.136:45455"+propietario.getAvatar())
+                        .diskCacheStrategy(DiskCacheStrategy.ALL)
+                        .into(ivProp);
+
             }
         });
 
@@ -113,8 +119,8 @@ public class PerfilFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Propietario p = new Propietario();
-                p.setId(Integer.parseInt(etId.getText().toString()));
-                p.setDni(Long.parseLong(etDni.getText().toString()));
+                p.setId(Integer.parseInt(etId.getText().toString()+""));
+                p.setDni(etDni.getText().toString());
                 p.setNombre(etNombre.getText().toString());
                 p.setApellido(etApellido.getText().toString());
                 p.setEmail(etMail.getText().toString());

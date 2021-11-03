@@ -47,7 +47,7 @@ public class InmuebleDetalleFragment extends Fragment {
                         .load(inmueble.getImagen())
                         .diskCacheStrategy(DiskCacheStrategy.ALL)
                         .into(ivFotoDetInmu);
-                //tvDetId.setText(""+inmueble.getIdInmueble());
+                //tvDetId.setText(inmueble.getIdInmueble()+"");
                 tvDetDir.setText(inmueble.getDireccion());
                 tvdetUso.setText(inmueble.getUso());
                 tvDetAmb.setText(inmueble.getAmbientes()+"");
@@ -57,7 +57,7 @@ public class InmuebleDetalleFragment extends Fragment {
                 cbEstado.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        mViewModel.guardarCambios(cbEstado.isChecked());
+                        mViewModel.guardarEstado(inmueble.getIdInmueble());
                     }
                 });
             }

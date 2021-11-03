@@ -19,6 +19,7 @@ import com.example.tpmovilesfinal2c.Modelo.Pago;
 import com.example.tpmovilesfinal2c.R;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class PagosFragment extends Fragment {
 
@@ -37,9 +38,9 @@ public class PagosFragment extends Fragment {
         View root = inflater.inflate(R.layout.pagosfragment, container, false);
 
         rvPagos = root.findViewById(R.id.rvPagos);
-        pViewModel.getPagos().observe(getViewLifecycleOwner(), new Observer<ArrayList<Pago>>() {
+        pViewModel.getPagos().observe(getViewLifecycleOwner(), new Observer<List<Pago>>() {
             @Override
-            public void onChanged(ArrayList<Pago> pagos) {
+            public void onChanged(List<Pago> pagos) {
                 GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 1, GridLayoutManager.VERTICAL, false);
                 rvPagos.setLayoutManager(gridLayoutManager);
                 adapter = new PagosAdapter(pagos, root, getLayoutInflater());
