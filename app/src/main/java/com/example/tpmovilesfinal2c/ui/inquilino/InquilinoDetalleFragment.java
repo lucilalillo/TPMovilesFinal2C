@@ -36,7 +36,7 @@ public class InquilinoDetalleFragment extends Fragment {
         inquilinoDetalleViewModel.getInquilino().observe(getViewLifecycleOwner(), new Observer<Inquilino>() {
             @Override
             public void onChanged(Inquilino inquilino) {
-                //tvCod.setText(inquilino.getIdInquilino()+"");
+                tvCod.setText(inquilino.getIdInquilino()+"");
                 tvNombre.setText(inquilino.getNombre());
                 tvApellido.setText(inquilino.getApellido());
                 tvDni.setText(inquilino.getDNI()+"");
@@ -50,7 +50,7 @@ public class InquilinoDetalleFragment extends Fragment {
     }
 
     public void inicializarVista(View root){
-        //tvCod = root.findViewById(R.id.tvCod);
+        tvCod = root.findViewById(R.id.tvCod);
         tvNombre = root.findViewById(R.id.tvDetInqNombre);
         tvApellido = root.findViewById(R.id.tvDetInqAp);
         tvDni = root.findViewById(R.id.tvDetInqDni);
