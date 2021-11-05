@@ -13,135 +13,86 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
         android:text="@string/tvInf"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.433"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tvlabelNom"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="152dp"
-        android:text="@string/tvlabelNom"
-        app:layout_constraintEnd_toStartOf="@+id/tvDetInqNombre"
-        app:layout_constraintHorizontal_bias="0.336"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvInf" />
-
-    <TextView
         android:id="@+id/tvDetInqNombre"
-        android:layout_width="68dp"
-        android:layout_height="21dp"
-        android:layout_marginTop="152dp"
-        android:layout_marginEnd="112dp"
-        android:text="TextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="156dp"
+        android:layout_marginEnd="20dp"
+        android:textAlignment="center"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvInf" />
 
     <TextView
-        android:id="@+id/tvlabelAp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
-        android:text="@string/tvlabelAp"
-        app:layout_constraintEnd_toStartOf="@+id/tvDetInqAp"
-        app:layout_constraintHorizontal_bias="0.349"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvlabelNom" />
-
-    <TextView
         android:id="@+id/tvDetInqAp"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="84dp"
-        android:layout_marginEnd="124dp"
-        android:text="TextView"
+        android:layout_marginEnd="16dp"
+        android:textAlignment="center"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/tvDetInqNombre" />
 
     <TextView
-        android:id="@+id/tvlabelDni"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
-        android:text="@string/tvlabelDni"
-        app:layout_constraintEnd_toStartOf="@+id/tvDetInqDni"
-        app:layout_constraintHorizontal_bias="0.368"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvlabelAp" />
-
-    <TextView
         android:id="@+id/tvDetInqDni"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
-        android:layout_marginEnd="116dp"
-        android:text="TextView"
+        android:layout_marginTop="52dp"
+        android:layout_marginEnd="20dp"
+        android:textAlignment="center"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvDetInqAp" />
 
     <TextView
-        android:id="@+id/tvlabelMail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:text="@string/tvlabelMail"
-        app:layout_constraintEnd_toStartOf="@+id/tvDetInqMail"
-        app:layout_constraintHorizontal_bias="0.357"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvlabelDni" />
-
-    <TextView
         android:id="@+id/tvDetInqMail"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="124dp"
-        android:text="TextView"
+        android:layout_marginTop="56dp"
+        android:layout_marginEnd="8dp"
+        android:textAlignment="center"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvDetInqDni" />
 
     <TextView
-        android:id="@+id/tvlabelTel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
-        android:text="@string/tvlabelTel"
-        app:layout_constraintEnd_toStartOf="@+id/tvDetInqTel"
-        app:layout_constraintHorizontal_bias="0.333"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvlabelMail" />
-
-    <TextView
         android:id="@+id/tvDetInqTel"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
-        android:layout_marginEnd="124dp"
-        android:text="TextView"
+        android:layout_marginTop="56dp"
+        android:layout_marginEnd="16dp"
+        android:textAlignment="center"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvDetInqMail" />
 
     <TextView
         android:id="@+id/tvInq1"
-        android:layout_width="20dp"
-        android:layout_height="28dp"
-        android:layout_marginTop="116dp"
+        android:layout_width="124dp"
+        android:layout_height="8dp"
+        android:layout_marginTop="108dp"
         android:text="ID"
         android:visibility="invisible"
         app:layout_constraintEnd_toStartOf="@+id/tvCod"
-        app:layout_constraintHorizontal_bias="0.336"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tvCod"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="52dp"
-        android:layout_marginEnd="120dp"
-        android:text="TextView"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="24dp"
+        android:textAlignment="center"
+        android:textSize="20sp"
         android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvInf" />

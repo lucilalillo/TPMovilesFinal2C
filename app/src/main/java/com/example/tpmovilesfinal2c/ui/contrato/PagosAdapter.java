@@ -1,16 +1,20 @@
 package com.example.tpmovilesfinal2c.ui.contrato;
 
+import android.os.Build;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.tpmovilesfinal2c.Modelo.Pago;
 import com.example.tpmovilesfinal2c.R;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -31,6 +35,7 @@ public class PagosAdapter extends RecyclerView.Adapter<PagosAdapter.ViewHolder> 
         return new ViewHolder(view);
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     public void onBindViewHolder(@NonNull PagosAdapter.ViewHolder holder, int position) {
         Pago p = lista.get(position);
@@ -38,7 +43,10 @@ public class PagosAdapter extends RecyclerView.Adapter<PagosAdapter.ViewHolder> 
         holder.num.setText(p.getNumero()+"");
         holder.codCon.setText(p.getContrato().getIdContrato()+"");
         holder.Imp.setText(p.getImporte()+"");
-        holder.fecha.setText(p.getFechaDePago()+"");
+        //damos formato a las fechas para que no muestre la hora
+        DateTimeFormatter dt = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss");
+        LocalDate fp = LocalDate.parse(p.getFechaDePago(), dt);
+        holder.fecha.setText(fp+"");
     }
 
     @Override

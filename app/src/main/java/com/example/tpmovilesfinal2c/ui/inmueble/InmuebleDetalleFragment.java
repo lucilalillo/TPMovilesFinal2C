@@ -48,11 +48,11 @@ public class InmuebleDetalleFragment extends Fragment {
                         .diskCacheStrategy(DiskCacheStrategy.ALL)
                         .into(ivFotoDetInmu);
                 //tvDetId.setText(inmueble.getIdInmueble()+"");
-                tvDetDir.setText(inmueble.getDireccion());
-                tvdetUso.setText(inmueble.getUso());
-                tvDetAmb.setText(inmueble.getAmbientes()+"");
-                tvDetTipo.setText(inmueble.getTipo());
-                tvDetPrecio.setText(String.valueOf(inmueble.getPrecio()));
+                tvDetDir.setText("Dirección: "+inmueble.getDireccion());
+                tvdetUso.setText("Uso: "+inmueble.getUso());
+                tvDetAmb.setText("Ambientes: "+inmueble.getAmbientes()+"");
+                tvDetTipo.setText("Tipo: "+inmueble.getTipo());
+                tvDetPrecio.setText(String.valueOf("Precio: "+inmueble.getPrecio()));
                 cbEstado.setChecked(inmueble.isEstado());
                 cbEstado.setOnClickListener(new View.OnClickListener() {
                     @Override

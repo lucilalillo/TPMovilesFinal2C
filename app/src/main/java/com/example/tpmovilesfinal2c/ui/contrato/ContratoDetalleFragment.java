@@ -1,9 +1,11 @@
 package com.example.tpmovilesfinal2c.ui.contrato;
 
+import androidx.annotation.RequiresApi;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.app.Activity;
+import android.os.Build;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -19,6 +21,9 @@ import android.widget.EditText;
 
 import com.example.tpmovilesfinal2c.Modelo.Contrato;
 import com.example.tpmovilesfinal2c.R;
+
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class ContratoDetalleFragment extends Fragment {
 
@@ -38,11 +43,16 @@ public class ContratoDetalleFragment extends Fragment {
         View root = inflater.inflate(R.layout.contrato_detalle_fragment, container, false);
         inicializarVista(root);
         contratoDetalleViewModel.getContrato().observe(getViewLifecycleOwner(), new Observer<Contrato>() {
+            @RequiresApi(api = Build.VERSION_CODES.O)
             @Override
             public void onChanged(Contrato contrato) {
                 cod.setText(contrato.getIdContrato()+"");
-                fecInicio.setText(contrato.getFechaInicio()+"");
-                fecFin.setText(contrato.getFechaFin()+"");
+                //damos formato a las fechas para que no muestre la hora
+                DateTimeFormatter dt = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss");
+                LocalDate fIni = LocalDate.parse(contrato.getFechaInicio(), dt);
+                fecInicio.setText(fIni+"");
+                LocalDate fFin = LocalDate.parse(contrato.getFechaFin(), dt);
+                fecFin.setText(fFin+"");
                 monto.setText(contrato.getMontoAlquiler()+"");
                 nombreInq.setText(contrato.getInquilino().getNombre()+" "+contrato.getInquilino().getApellido());
                 direcInmu.setText(contrato.getInmueble().getDireccion());
