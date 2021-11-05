@@ -65,15 +65,18 @@ public class ApiClient {
     public interface  PostInterface{
 
         //Servicios que usamos en propietarios
+        //Se usa en la vista de login
         @FormUrlEncoded
         @POST("Propietarios/Login")
         Call<String> login(@Field("Email") String email, @Field("Clave") String clave);
 
         //servicio que devuelve un propietario
+        //Se usa en la vista de perfil
         @GET("Propietarios")
         Call<Propietario> obtenerPropietario(@Header("Authorization") String token);
 
         //servicio que edita los datos del propietario
+        //Se usa en la vista de perfil
         @PUT("Propietarios")
         Call<Propietario> editarPropietario(@Header("Authorization") String token, @Body Propietario propietario);
 
@@ -82,16 +85,14 @@ public class ApiClient {
         Call<List<Inmueble>> listaInmuebles(@Header("Authorization") String token);
 
         //cambiar estado disponible del inmueble
+        //se usa en la vista detalle inmueble
         @PUT("Inmuebles/{id}")
         Call<Inmueble> editarEstado(@Header("Authorization") String token, @Path("id")int id );
 
         //devuelve los inmuebles alquilados
+        //se usa en la vista de inquilinos y de contratos
         @GET("Contratos")
         Call<List<Contrato>> obtenerInmueblesAlquilados(@Header("Authorization") String token);
-
-        //devuelve un inquilino
-        @GET("Inquilinos")
-        Call<Inquilino> obtenerInquilino(@Header("Authorization") String token, @Body Inquilino inquilino);
 
         //este servicio devuelve una lista de inmuebles alquilados del usuario logueado
         //se usa en la vista Contrato
@@ -100,8 +101,6 @@ public class ApiClient {
 
         @GET("Contratos/ObtenerContrato")
         Call<Contrato> obtenerContratoVigente(@Header("Authorization")  String token, @Path ("id") int idCon);
-
-
 
         @GET("Pagos/{id}")
         Call<List<Pago>> obtenerPagos(@Header("Authorization") String token, @Path ("id") int idCon);

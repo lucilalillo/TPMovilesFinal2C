@@ -49,7 +49,7 @@ public class InmueblesAdapter extends RecyclerView.Adapter <InmueblesAdapter.Vie
         holder.tvDireccion.setText(lista.get(position).getDireccion());
         holder.tvprecio.setText(lista.get(position).getPrecio()+"");
        /* Glide.with(root.getContext())
-                .load(lista.get(position).getImagen())
+                .load(i.getImagen())
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .into(holder.ivFotoInmu);*/
         holder.itemView.setOnClickListener(new View.OnClickListener() {
