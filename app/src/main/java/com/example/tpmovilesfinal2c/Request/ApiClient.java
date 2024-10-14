@@ -38,7 +38,7 @@ public class ApiClient {
     private static Propietario usuarioActual=null;
     private static ApiClient api=null;*/
 
-    private static final String URLBASE="http://192.168.0.114:45455/Api/";//Url que me da conveyor
+    private static final String URLBASE="http://192.168.0.104:5001/";
     private static  PostInterface postInterface;
     private static SharedPreferences sharedPreferences;
 
