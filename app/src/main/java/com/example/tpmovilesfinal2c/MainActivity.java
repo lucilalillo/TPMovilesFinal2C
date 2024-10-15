@@ -69,8 +69,7 @@ public class MainActivity extends AppCompatActivity {
         TextView nombre = header.findViewById(R.id.tvNombre);
         TextView mail = header.findViewById(R.id.tvMail);
         Propietario p = (Propietario) getIntent().getBundleExtra("propietario").getSerializable("propietario");
-        /*Log.d("foto", "http://192.168.0.114:45455/"+p.getAvatar());
-        Glide.with(header.getContext())
+        /*.with(header.getContext())
                 .load("http://192.168.0.114:45455"+p.getAvatar())
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .into(foto);*/

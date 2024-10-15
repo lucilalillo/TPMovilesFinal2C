@@ -90,7 +90,7 @@ public class PerfilViewModel extends AndroidViewModel {
             @Override
             public void onResponse(Call<Propietario> call, Response<Propietario> response) {
                 if(response.isSuccessful()){
-                    propietario.postValue(response.body());
+                    propietario.postValue(response.body()); //falta un mutable de propietario
                     Toast.makeText(context, "Se editaron los datos con éxito", Toast.LENGTH_LONG).show();
                 }
             }

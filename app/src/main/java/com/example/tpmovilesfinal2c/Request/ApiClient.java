@@ -30,13 +30,6 @@ import retrofit2.http.Path;
 ;
 
 public class ApiClient {
-    /*private ArrayList<Propietario> propietarios=new ArrayList<>();
-    private ArrayList<Inquilino> inquilinos=new ArrayList<>();
-    private ArrayList<Inmueble> inmuebles=new ArrayList<>();
-    private ArrayList<Contrato> contratos=new ArrayList<>();
-    private ArrayList<Pago> pagos=new ArrayList<>();
-    private static Propietario usuarioActual=null;
-    private static ApiClient api=null;*/
 
     private static final String URLBASE="http://192.168.0.104:5001/";
     private static  PostInterface postInterface;
