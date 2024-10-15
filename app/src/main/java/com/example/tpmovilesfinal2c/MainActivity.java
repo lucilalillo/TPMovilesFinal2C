@@ -74,8 +74,8 @@ public class MainActivity extends AppCompatActivity {
                 .load("http://192.168.0.114:45455"+p.getAvatar())
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .into(foto);*/
-        nombre.setText(p.getNombre());
-        mail.setText(p.getEmail());
+        nombre.setText(p.getNombre()+ " " + p.getApellido());
+        mail.setText(p.getEmail()+"");
     }
 
     @Override

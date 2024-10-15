@@ -53,7 +53,7 @@ public class PerfilFragment extends Fragment {
                 etApellido.setText(propietario.getApellido());
                 etMail.setText(propietario.getEmail());
                 etTel.setText(propietario.getTelefono());
-                etPass.setText(propietario.getContraseña());
+                //etPass.setText(propietario.getContraseña());
                 Glide.with(vistaPerfil.getContext())
                         .load("http://169.254.113.136:45455"+propietario.getAvatar())
                         .diskCacheStrategy(DiskCacheStrategy.ALL)
@@ -69,7 +69,7 @@ public class PerfilFragment extends Fragment {
                 etNombre.setEnabled(aBoolean);
                 etApellido.setEnabled(aBoolean);
                 etMail.setEnabled(aBoolean);
-                etPass.setEnabled(aBoolean);
+                //etPass.setEnabled(aBoolean);
                 etTel.setEnabled(aBoolean);
 
             }
@@ -99,7 +99,7 @@ public class PerfilFragment extends Fragment {
         etNombre = vistaPerfil.findViewById(R.id.etNombre);
         etApellido = vistaPerfil.findViewById(R.id.etApellido);
         etMail = vistaPerfil.findViewById(R.id.etMail);
-        etPass = vistaPerfil.findViewById(R.id.etPass);
+        //etPass = vistaPerfil.findViewById(R.id.etPass);
         etTel = vistaPerfil.findViewById(R.id.etTel);
         ivProp = vistaPerfil.findViewById(R.id.ivProp);
         btEditar = vistaPerfil.findViewById(R.id.btEditar);
@@ -124,7 +124,7 @@ public class PerfilFragment extends Fragment {
                 p.setNombre(etNombre.getText().toString());
                 p.setApellido(etApellido.getText().toString());
                 p.setEmail(etMail.getText().toString());
-                p.setContraseña(etPass.getText().toString());
+               // p.setContraseña(etPass.getText().toString());
                 p.setTelefono(etTel.getText().toString());
 
                 pvm.editarDatos(p);

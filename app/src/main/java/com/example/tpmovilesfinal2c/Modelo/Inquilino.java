@@ -8,7 +8,7 @@ public class Inquilino implements Serializable {
     private String nombre;
     private String apellido;
     private String lugarDeTrabajo;
-    private String mail;
+    private String email;
     private String telefono;
     private String nombreGarante;
     private String telefonoGarante;
@@ -21,7 +21,7 @@ public class Inquilino implements Serializable {
         this.nombre = nombre;
         this.apellido = apellido;
         this.lugarDeTrabajo = lugarDeTrabajo;
-        this.mail = email;
+        this.email = email;
         this.telefono = telefono;
         this.nombreGarante = nombreGarante;
         this.telefonoGarante = telefonoGarante;
@@ -68,11 +68,11 @@ public class Inquilino implements Serializable {
     }
 
     public String getEmail() {
-        return mail;
+        return email;
     }
 
     public void setEmail(String email) {
-        this.mail = email;
+        this.email = email;
     }
 
     public String getTelefono() {

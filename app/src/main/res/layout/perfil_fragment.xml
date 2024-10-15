@@ -90,7 +90,7 @@
             android:layout_marginTop="36dp"
             android:ems="10"
             android:enabled="false"
-            android:hint="@string/etEmail"
+            android:hint="Mail"
             android:inputType="textPersonName"
             android:minHeight="48dp"
             android:visibility="visible"
@@ -114,7 +114,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.796"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/etPass" />
+            app:layout_constraintTop_toBottomOf="@+id/etMail" />
 
         <Button
             android:id="@+id/btGuardar"
@@ -122,7 +122,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="44dp"
             android:text="@string/btGuardar"
-            android:visibility="visible"
+            android:visibility="invisible"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
@@ -135,24 +135,11 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
             android:text="@string/btEditar"
+            android:visibility="visible"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/etTel" />
-
-        <EditText
-            android:id="@+id/etPass"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:ems="10"
-            android:inputType="numberPassword"
-            android:minHeight="48dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.796"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/etMail"
-            tools:ignore="SpeakableTextPresentCheck" />
 
         <TextView
             android:id="@+id/tvPerfil1"
@@ -195,16 +182,6 @@
             app:layout_constraintTop_toBottomOf="@+id/tvPerfil3" />
 
         <TextView
-            android:id="@+id/tvPerfil5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="60dp"
-            android:layout_marginTop="60dp"
-            android:text="Clave"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvPerfil4" />
-
-        <TextView
             android:id="@+id/tvPerfil6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -212,7 +189,7 @@
             android:layout_marginTop="56dp"
             android:text="Telefono"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvPerfil5" />
+            app:layout_constraintTop_toBottomOf="@+id/tvPerfil4" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

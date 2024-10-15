@@ -19,9 +19,11 @@
 
     <TextView
         android:id="@+id/tvDetDir"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="35dp"
         android:layout_marginTop="28dp"
+        android:layout_marginEnd="30dp"
         android:textAlignment="center"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -31,9 +33,11 @@
 
     <TextView
         android:id="@+id/tvDetUso"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="35dp"
         android:layout_marginTop="30dp"
+        android:layout_marginEnd="30dp"
         android:textAlignment="center"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -42,9 +46,11 @@
 
     <TextView
         android:id="@+id/tvDetAmb"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="35dp"
         android:layout_marginTop="38dp"
+        android:layout_marginEnd="30dp"
         android:textAlignment="center"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -53,9 +59,11 @@
 
     <TextView
         android:id="@+id/tvDetTipo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="23dp"
+        android:layout_marginStart="35dp"
         android:layout_marginTop="48dp"
+        android:layout_marginEnd="30dp"
         android:textAlignment="center"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -65,9 +73,11 @@
 
     <TextView
         android:id="@+id/tvDetPrecio"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="35dp"
         android:layout_marginTop="32dp"
+        android:layout_marginEnd="30dp"
         android:textAlignment="center"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -79,7 +89,7 @@
         android:id="@+id/cbEstado"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="156dp"
+        android:layout_marginBottom="124dp"
         android:text="@string/cbEstado"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -88,8 +98,8 @@
 
     <TextView
         android:id="@+id/tvDetId"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="19dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/ivFotoDetInmu"
         app:layout_constraintHorizontal_bias="0.571"

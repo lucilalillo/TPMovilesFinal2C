@@ -15,7 +15,7 @@
             android:id="@+id/tvConInf"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/tvInf"
+            android:text="@string/tvConInf"
             android:textAlignment="center"
             android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="parent"
