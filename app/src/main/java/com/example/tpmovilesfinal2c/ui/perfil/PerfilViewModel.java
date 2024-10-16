@@ -4,6 +4,8 @@ import android.app.Application;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -12,7 +14,9 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 import com.example.tpmovilesfinal2c.Modelo.Propietario;
+import com.example.tpmovilesfinal2c.R;
 import com.example.tpmovilesfinal2c.Request.ApiClient;
+import com.google.android.material.navigation.NavigationView;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -89,8 +93,9 @@ public class PerfilViewModel extends AndroidViewModel {
         prop.enqueue(new Callback<Propietario>() {
             @Override
             public void onResponse(Call<Propietario> call, Response<Propietario> response) {
+
                 if(response.isSuccessful()){
-                    propietario.postValue(response.body()); //falta un mutable de propietario
+                    propietario.setValue(response.body());
                     Toast.makeText(context, "Se editaron los datos con éxito", Toast.LENGTH_LONG).show();
                 }
             }

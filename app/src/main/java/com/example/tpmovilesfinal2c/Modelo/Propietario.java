@@ -15,7 +15,7 @@ public class Propietario implements Serializable {
     private String avatar;
 
     public Propietario() {}
-    public Propietario(int id, String dni, String nombre, String apellido, String email, String contraseña, String telefono, String avatar) {
+    public Propietario(int id, String nombre, String apellido, String dni, String telefono, String email, String contraseña, String avatar) {
         this.id = id;
         this.dni = dni;
         this.nombre = nombre;
