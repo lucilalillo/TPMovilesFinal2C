@@ -3,7 +3,6 @@ package com.example.tpmovilesfinal2c.ui.inmueble;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
-import android.content.Context;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -53,11 +52,11 @@ public class InmuebleDetalleFragment extends Fragment {
                 tvDetAmb.setText("Ambientes: "+inmueble.getAmbientes()+"");
                 tvDetTipo.setText("Tipo: "+inmueble.getTipo());
                 tvDetPrecio.setText(String.valueOf("Precio: "+inmueble.getPrecio()));
-                cbEstado.setChecked(inmueble.isEstado());
+                cbEstado.setChecked(inmueble.isDisponible());
                 cbEstado.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        mViewModel.guardarEstado(inmueble.getIdInmueble());
+                        mViewModel.guardarEstado(inmueble.getId());
                     }
                 });
             }
