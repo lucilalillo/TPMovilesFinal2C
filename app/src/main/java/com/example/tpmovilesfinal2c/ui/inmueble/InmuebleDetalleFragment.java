@@ -43,7 +43,7 @@ public class InmuebleDetalleFragment extends Fragment {
             @Override
             public void onChanged(Inmueble inmueble) {
                 Glide.with(getContext())
-                        .load(inmueble.getImagen())
+                        .load("http://192.168.0.104:5001/"+inmueble.getImgUrl())
                         .diskCacheStrategy(DiskCacheStrategy.ALL)
                         .into(ivFotoDetInmu);
                 //tvDetId.setText(inmueble.getIdInmueble()+"");
@@ -51,7 +51,7 @@ public class InmuebleDetalleFragment extends Fragment {
                 tvdetUso.setText("Uso: "+inmueble.getUso());
                 tvDetAmb.setText("Ambientes: "+inmueble.getAmbientes()+"");
                 tvDetTipo.setText("Tipo: "+inmueble.getTipo());
-                tvDetPrecio.setText(String.valueOf("Precio: "+inmueble.getPrecio()));
+                tvDetPrecio.setText(String.valueOf("Precio: $ "+inmueble.getPrecio()));
                 cbEstado.setChecked(inmueble.isDisponible());
                 cbEstado.setOnClickListener(new View.OnClickListener() {
                     @Override

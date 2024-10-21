@@ -47,11 +47,11 @@ public class InmueblesAdapter extends RecyclerView.Adapter <InmueblesAdapter.Vie
     public void onBindViewHolder(@NonNull InmueblesAdapter.ViewHolder holder, int position) {
         Inmueble i = lista.get(position);
         holder.tvDireccion.setText(lista.get(position).getDireccion());
-        holder.tvprecio.setText(lista.get(position).getPrecio()+"");
-       /* Glide.with(root.getContext())
-                .load(i.getImagen())
+        holder.tvprecio.setText("$ " + lista.get(position).getPrecio()+"");
+        Glide.with(root.getContext())
+                .load("http://192.168.0.104:5001/" + lista.get(position).getImgUrl())
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
-                .into(holder.ivFotoInmu);*/
+                .into(holder.ivFotoInmu);
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
