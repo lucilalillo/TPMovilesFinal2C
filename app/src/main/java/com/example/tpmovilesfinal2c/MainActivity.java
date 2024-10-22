@@ -69,10 +69,11 @@ public class MainActivity extends AppCompatActivity {
         TextView nombre = header.findViewById(R.id.tvNombre);
         TextView mail = header.findViewById(R.id.tvMail);
         Propietario p = (Propietario) getIntent().getBundleExtra("propietario").getSerializable("propietario");
-        /*.with(header.getContext())
-                .load("http://192.168.0.114:45455"+p.getAvatar())
+        Glide.with(header.getContext())
+                .load("http://192.168.0.104:5001"+p.getAvatar())
+                .placeholder(R.drawable.juan)
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
-                .into(foto);*/
+                .into(foto);
         nombre.setText(p.getNombre()+ " " + p.getApellido());
         mail.setText(p.getEmail()+"");
     }
