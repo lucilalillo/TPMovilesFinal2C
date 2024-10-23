@@ -47,10 +47,10 @@ public class ContratosAdapter extends RecyclerView.Adapter<ContratosAdapter.View
         Contrato i = lista.get(position);
         Inmueble inmu = i.getInmueble();
         holder.tvDirec.setText(inmu.getDireccion());
-        /*Glide.with(context)
-                .load("https://192.168.0.101:45457"+inmu.getImagen())
+        Glide.with(root.getContext())
+                .load("http://192.168.0.104:5001/"+inmu.getImgUrl())
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
-                .into(holder.ivfotoInq);*/
+                .into(holder.ivfotoInq);
         holder.btInqVer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

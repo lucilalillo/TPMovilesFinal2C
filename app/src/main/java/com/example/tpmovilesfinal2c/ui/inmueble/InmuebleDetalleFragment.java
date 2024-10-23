@@ -50,7 +50,7 @@ public class InmuebleDetalleFragment extends Fragment {
                 tvDetDir.setText("Dirección: "+inmueble.getDireccion());
                 tvdetUso.setText("Uso: "+inmueble.getUso());
                 tvDetAmb.setText("Ambientes: "+inmueble.getAmbientes()+"");
-                tvDetTipo.setText("Tipo: "+inmueble.getTipo());
+                tvDetTipo.setText("Tipo: "+inmueble.getTipo().getDescripcion());
                 tvDetPrecio.setText(String.valueOf("Precio: $ "+inmueble.getPrecio()));
                 cbEstado.setChecked(inmueble.isDisponible());
                 cbEstado.setOnClickListener(new View.OnClickListener() {

@@ -39,6 +39,7 @@ public class InquilinosAdapter extends RecyclerView.Adapter <InquilinosAdapter.V
         this.lista = lista;
         this.root = root;
         this.inflater = inflater;
+        this.context = root.getContext();
     }
 
     @NonNull
@@ -54,10 +55,10 @@ public class InquilinosAdapter extends RecyclerView.Adapter <InquilinosAdapter.V
         Inmueble inmu = i.getInmueble();
         Inquilino inq = i.getInquilino();
         holder.tvDirec.setText(inmu.getDireccion());
-        /*Glide.with(context)
-                .load("https://192.168.0.110:45455"+inmu.getImagen())
+        Glide.with(context)
+                .load("http://192.168.0.104:5001/"+inmu.getImgUrl())
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
-                .into(holder.ivfotoInq);*/
+                .into(holder.ivfotoInq);
 
         holder.btInqVer.setOnClickListener(new View.OnClickListener() {
             @Override

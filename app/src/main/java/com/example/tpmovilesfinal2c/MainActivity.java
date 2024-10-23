@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
         Propietario p = (Propietario) getIntent().getBundleExtra("propietario").getSerializable("propietario");
         Glide.with(header.getContext())
                 .load("http://192.168.0.104:5001"+p.getAvatar())
-                .placeholder(R.drawable.juan)
+                .placeholder(R.drawable.sonia)
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .into(foto);
         nombre.setText(p.getNombre()+ " " + p.getApellido());

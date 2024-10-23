@@ -133,11 +133,10 @@
             android:id="@+id/btEditar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
+            android:layout_marginStart="52dp"
+            android:layout_marginTop="56dp"
             android:text="@string/btEditar"
             android:visibility="visible"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/etTel" />
 
@@ -190,6 +189,17 @@
             android:text="Telefono"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvPerfil4" />
+
+        <Button
+            android:id="@+id/btnCClave"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="76dp"
+            android:layout_marginTop="56dp"
+            android:text="Cambiar Clave"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/btEditar"
+            app:layout_constraintTop_toBottomOf="@+id/etTel" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -2,6 +2,7 @@ package com.example.tpmovilesfinal2c.ui.perfil;
 
 import android.app.Application;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.view.View;
 import android.widget.ImageView;
@@ -112,5 +113,11 @@ public class PerfilViewModel extends AndroidViewModel {
         editarVisible.setValue(View.INVISIBLE);
         guardar.setValue(View.VISIBLE);
 
+    }
+
+    public void cambiarPass(){
+        Intent intent = new Intent(context, CambiarClaveFragment.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        context.startActivity(intent);
     }
 }

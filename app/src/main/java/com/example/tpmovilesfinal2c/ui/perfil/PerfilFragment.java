@@ -28,7 +28,7 @@ public class PerfilFragment extends Fragment {
 
     private PerfilViewModel pvm;
     private EditText etId, etDni, etNombre, etApellido, etMail, etPass, etTel;
-    private Button btGuardar, btEditar;
+    private Button btGuardar, btEditar, btCambiarClave;
     private ImageView ivProp;
 
     public static PerfilFragment newInstance() {
@@ -134,6 +134,13 @@ public class PerfilFragment extends Fragment {
 
                 pvm.editarDatos(p);
 
+            }
+        });
+
+        btCambiarClave.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                pvm.cambiarPass();
             }
         });
     }
