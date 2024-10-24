@@ -35,8 +35,8 @@ public class PerfilViewModel extends AndroidViewModel {
         context = application.getApplicationContext();
     }
 
-    public MutableLiveData<Propietario> getPropietario(){
-        if(propietario == null){
+    public MutableLiveData<Propietario> getPropietario() {
+        if (propietario == null) {
             propietario = new MutableLiveData<>();
         }
         return propietario;
@@ -71,10 +71,10 @@ public class PerfilViewModel extends AndroidViewModel {
         prop.enqueue(new Callback<Propietario>() {
             @Override
             public void onResponse(Call<Propietario> call, Response<Propietario> response) {
-                if(response.isSuccessful()){
+                if (response.isSuccessful()) {
                     propietario.postValue(response.body());
                     getEditable().setValue(false);
-                }else{
+                } else {
                     Toast.makeText(context, "Error", Toast.LENGTH_LONG).show();
                 }
             }
@@ -87,7 +87,7 @@ public class PerfilViewModel extends AndroidViewModel {
 
     }
 
-    public void editarDatos(Propietario p){
+    public void editarDatos(Propietario p) {
         SharedPreferences sp = ApiClient.conectar(context);
         String t = sp.getString("token", "vacio");
         Call<Propietario> prop = ApiClient.getMyApiClient().editarPropietario(t, p);
@@ -95,7 +95,7 @@ public class PerfilViewModel extends AndroidViewModel {
             @Override
             public void onResponse(Call<Propietario> call, Response<Propietario> response) {
 
-                if(response.isSuccessful()){
+                if (response.isSuccessful()) {
                     propietario.setValue(response.body());
                     Toast.makeText(context, "Se editaron los datos con éxito", Toast.LENGTH_LONG).show();
                 }
@@ -103,21 +103,38 @@ public class PerfilViewModel extends AndroidViewModel {
 
             @Override
             public void onFailure(Call<Propietario> call, Throwable t) {
-                Toast.makeText(context, "Error al editar "+t.getMessage(), Toast.LENGTH_LONG).show();
+                Toast.makeText(context, "Error al editar " + t.getMessage(), Toast.LENGTH_LONG).show();
             }
         });
     }
 
-    public void guardarDatos(){
+    public void guardarDatos() {
         editable.setValue(true);
         editarVisible.setValue(View.INVISIBLE);
         guardar.setValue(View.VISIBLE);
 
     }
 
-    public void cambiarPass(){
-        Intent intent = new Intent(context, CambiarClaveFragment.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-        context.startActivity(intent);
+    public void cambiarPass(String contra, String repetirContra, String claveActual) {
+        if (contra != null && contra.equals(repetirContra)) {
+            //cambiamos password
+            SharedPreferences sp = ApiClient.conectar(context);
+            String token = sp.getString("token", "vacio");
+            Call<Propietario> prop = ApiClient.getMyApiClient().cambiarpass(token, claveActual, contra);
+            prop.enqueue(new Callback<Propietario>() {
+                @Override
+                public void onResponse(Call<Propietario> call, Response<Propietario> response) {
+
+                    Toast.makeText(context, "Se edito el password con éxito", Toast.LENGTH_LONG).show();
+                }
+
+                @Override
+                public void onFailure(Call<Propietario> call, Throwable throwable) {
+                    Toast.makeText(context, "Error al editar Password", Toast.LENGTH_LONG).show();
+                }
+            });
+        } else if (contra != null && repetirContra != null) {
+            Toast.makeText(context, "Las claves son distintas.", Toast.LENGTH_LONG).show();
+        }
     }
 }

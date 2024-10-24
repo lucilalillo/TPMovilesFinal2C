@@ -27,10 +27,10 @@ import com.example.tpmovilesfinal2c.R;
 public class PerfilFragment extends Fragment {
 
     private PerfilViewModel pvm;
-    private EditText etId, etDni, etNombre, etApellido, etMail, etPass, etTel;
-    private Button btGuardar, btEditar, btCambiarClave;
+    private EditText etId, etDni, etNombre, etApellido, etMail, etPass, etTel, etContra, etRepetirContra, etClaveActual;
+    private Button btGuardar, btEditar, btCambiarClave, btGuardarClave;
     private ImageView ivProp;
-
+    private TextView tvClaveActual;
     public static PerfilFragment newInstance() {
         return new PerfilFragment();
     }
@@ -47,7 +47,7 @@ public class PerfilFragment extends Fragment {
         pvm.getPropietario().observe(getViewLifecycleOwner(), new Observer<Propietario>() {
             @Override
             public void onChanged(Propietario propietario) {
-                etId.setText(propietario.getId()+"");
+                //etId.setText(propietario.getId()+"");
                 etDni.setText(propietario.getDni());
                 etNombre.setText(propietario.getNombre());
                 etApellido.setText(propietario.getApellido());
@@ -99,7 +99,7 @@ public class PerfilFragment extends Fragment {
 
     private void inicializarVista(View vistaPerfil) {
 
-        etId = vistaPerfil.findViewById(R.id.etId);
+        //etId = vistaPerfil.findViewById(R.id.etId);
         etDni = vistaPerfil.findViewById(R.id.etDni);
         etNombre = vistaPerfil.findViewById(R.id.etNombre);
         etApellido = vistaPerfil.findViewById(R.id.etApellido);
@@ -107,9 +107,14 @@ public class PerfilFragment extends Fragment {
         //etPass = vistaPerfil.findViewById(R.id.etPass);
         etTel = vistaPerfil.findViewById(R.id.etTel);
         ivProp = vistaPerfil.findViewById(R.id.ivProp);
-        btEditar = vistaPerfil.findViewById(R.id.btEditar);
-        btGuardar = vistaPerfil.findViewById(R.id.btGuardar);
-
+        btEditar = vistaPerfil.findViewById(R.id.btnEditar);
+        btGuardar = vistaPerfil.findViewById(R.id.btnGuardar);
+        btCambiarClave = vistaPerfil.findViewById(R.id.btnCClave);
+        etContra = vistaPerfil.findViewById(R.id.etContra);
+        etRepetirContra = vistaPerfil.findViewById(R.id.etRepetirContra);
+        btGuardarClave = vistaPerfil.findViewById(R.id.btnGuardarClave);
+        etClaveActual = vistaPerfil.findViewById(R.id.etClaveActual);
+        tvClaveActual = vistaPerfil.findViewById(R.id.textView5);
         //editar habilita la edicion
         btEditar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -124,7 +129,7 @@ public class PerfilFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Propietario p = new Propietario();
-                p.setId(Integer.parseInt(etId.getText().toString()+""));
+               // p.setId(Integer.parseInt(etId.getText().toString()+""));
                 p.setDni(etDni.getText().toString());
                 p.setNombre(etNombre.getText().toString());
                 p.setApellido(etApellido.getText().toString());
@@ -133,14 +138,39 @@ public class PerfilFragment extends Fragment {
                 p.setTelefono(etTel.getText().toString());
 
                 pvm.editarDatos(p);
-
             }
         });
 
         btCambiarClave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                pvm.cambiarPass();
+                etContra.setVisibility(View.VISIBLE);
+                etRepetirContra.setVisibility(View.VISIBLE);
+                etClaveActual.setVisibility(View.VISIBLE);
+                tvClaveActual.setVisibility(View.VISIBLE);
+                btCambiarClave.setVisibility(View.GONE);
+                btGuardar.setVisibility(View.GONE);
+                btGuardarClave.setVisibility(View.VISIBLE);
+                btEditar.setVisibility(View.GONE);
+            }
+        });
+
+        btGuardarClave.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String claveActual = etClaveActual.getText().toString();
+                String contra = etContra.getText().toString();
+                String rep = etRepetirContra.getText().toString();
+                pvm.cambiarPass(contra, rep, claveActual);
+
+                etContra.setVisibility(View.GONE);
+                etRepetirContra.setVisibility(View.GONE);
+                etClaveActual.setVisibility(View.GONE);
+                tvClaveActual.setVisibility(View.GONE);
+                btCambiarClave.setVisibility(View.VISIBLE);
+                btGuardar.setVisibility(View.VISIBLE);
+                btGuardarClave.setVisibility(View.GONE);
+                btEditar.setVisibility(View.VISIBLE);
             }
         });
     }

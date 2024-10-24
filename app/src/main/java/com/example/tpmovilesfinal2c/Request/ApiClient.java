@@ -16,8 +16,6 @@ import com.example.tpmovilesfinal2c.R;
 import java.util.ArrayList;
 import java.util.List;
 
-import okhttp3.OkHttpClient;
-import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Call;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -48,16 +46,16 @@ public class ApiClient {
     public static PostInterface getMyApiClient(){
 
         Gson gson = new GsonBuilder().setLenient().create();
-        // Construimos un cliente HTTP utilizando OkHttpClient para manejar las solicitudes
+       /* // Construimos un cliente HTTP utilizando OkHttpClient para manejar las solicitudes
         OkHttpClient.Builder httpClient = new OkHttpClient.Builder();
         // Crear un interceptor para el logging
         // agregar a gradle: implementation 'com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.14'
         HttpLoggingInterceptor loggingInterceptor = new HttpLoggingInterceptor();
         loggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
-        httpClient.addInterceptor(loggingInterceptor);
+        httpClient.addInterceptor(loggingInterceptor);*/
         Retrofit retrofit=new Retrofit.Builder()
                 .baseUrl(URLBASE)
-                .client(httpClient.build()) // El cliente HTTP configurado
+                //.client(httpClient.build()) // El cliente HTTP configurado
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .build();
 
@@ -85,6 +83,7 @@ public class ApiClient {
         Call<Propietario> editarPropietario(@Header("Authorization") String token, @Body Propietario propietario);
         //servicio que cambia la contraseña
         //se usa en la vista perfil
+        @FormUrlEncoded
         @PATCH("propietarios/cambiarpass")
         Call<Propietario> cambiarpass(@Header("Authorization")String token,
                                       @Field("clVieja")String cv,

@@ -10,55 +10,43 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#0DF6EE">
+        android:background="#00BCD4">
 
         <ImageView
             android:id="@+id/ivProp"
-            android:layout_width="93dp"
-            android:layout_height="74dp"
-            android:layout_marginTop="44dp"
-            android:layout_marginEnd="100dp"
+            android:layout_width="120dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginRight="60dp"
+            android:visibility="visible"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:src="@tools:sample/avatars" />
-
-        <EditText
-            android:id="@+id/etId"
-            android:layout_width="108dp"
-            android:layout_height="48dp"
-            android:layout_marginStart="52dp"
-            android:layout_marginTop="68dp"
-            android:ems="10"
-            android:hint="@string/etId"
-            android:inputType="textPersonName"
-            android:visibility="invisible"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            tools:src="@tools:sample/avatars"
+            tools:visibility="visible" />
 
         <EditText
             android:id="@+id/etDni"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="18dp"
             android:ems="10"
-            android:enabled="false"
-            android:hint="@string/etDni"
+            android:enabled="true"
             android:inputType="textPersonName"
             android:minHeight="48dp"
             android:visibility="visible"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.8"
+            app:layout_constraintHorizontal_bias="0.81"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/etId" />
+            app:layout_constraintTop_toBottomOf="@+id/ivProp" />
 
         <EditText
             android:id="@+id/etNombre"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="18dp"
             android:ems="10"
-            android:enabled="false"
-            android:hint="@string/etNombre"
+            android:enabled="true"
             android:inputType="textPersonName"
             android:minHeight="48dp"
             android:visibility="visible"
@@ -70,11 +58,10 @@
         <EditText
             android:id="@+id/etApellido"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="44dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="18dp"
             android:ems="10"
-            android:enabled="false"
-            android:hint="@string/etApellido"
+            android:enabled="true"
             android:inputType="textPersonName"
             android:minHeight="48dp"
             android:visibility="visible"
@@ -86,76 +73,49 @@
         <EditText
             android:id="@+id/etMail"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="36dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="18dp"
             android:ems="10"
             android:enabled="false"
-            android:hint="Mail"
             android:inputType="textPersonName"
             android:minHeight="48dp"
             android:visibility="visible"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.796"
+            app:layout_constraintHorizontal_bias="0.805"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/etApellido" />
 
         <EditText
             android:id="@+id/etTel"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="36dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="18dp"
             android:ems="10"
-            android:enabled="false"
-            android:hint="@string/etTelefono"
+            android:enabled="true"
             android:inputType="textPersonName"
             android:minHeight="48dp"
-            android:text="Name"
             android:visibility="visible"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.796"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/etMail" />
 
-        <Button
-            android:id="@+id/btGuardar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="44dp"
-            android:text="@string/btGuardar"
-            android:visibility="invisible"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/etTel"
-            tools:ignore="DuplicateClickableBoundsCheck" />
-
-        <Button
-            android:id="@+id/btEditar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="52dp"
-            android:layout_marginTop="56dp"
-            android:text="@string/btEditar"
-            android:visibility="visible"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/etTel" />
-
         <TextView
             android:id="@+id/tvPerfil1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="52dp"
-            android:layout_marginTop="76dp"
-            android:text="Dni: "
+            android:layout_marginStart="36dp"
+            android:layout_marginTop="160dp"
+            android:text="Dni"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/etId" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/tvPerfil2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="52dp"
-            android:layout_marginTop="44dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="18dp"
             android:text="Nombre"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvPerfil1" />
@@ -164,8 +124,8 @@
             android:id="@+id/tvPerfil3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="52dp"
-            android:layout_marginTop="72dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="18dp"
             android:text="Apellido"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvPerfil2" />
@@ -174,9 +134,9 @@
             android:id="@+id/tvPerfil4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="60dp"
-            android:layout_marginTop="68dp"
-            android:text="Mail"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="18dp"
+            android:text="Email"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvPerfil3" />
 
@@ -184,22 +144,117 @@
             android:id="@+id/tvPerfil6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="52dp"
-            android:layout_marginTop="56dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="18dp"
             android:text="Telefono"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvPerfil4" />
 
         <Button
+            android:id="@+id/btnGuardar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="48dp"
+            android:text="Guardar"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.222"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etRepetirContra"
+            tools:visibility="invisible" />
+
+        <Button
             android:id="@+id/btnCClave"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="76dp"
-            android:layout_marginTop="56dp"
+            android:layout_marginTop="48dp"
             android:text="Cambiar Clave"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/btEditar"
+            app:layout_constraintHorizontal_bias="0.764"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/etTel" />
+
+        <EditText
+            android:id="@+id/etContra"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginTop="20dp"
+            android:ems="10"
+            android:hint="Contraseña nueva"
+            android:inputType="textPassword"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.502"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etClaveActual"
+            tools:visibility="gone" />
+
+        <EditText
+            android:id="@+id/etRepetirContra"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginTop="20dp"
+            android:ems="10"
+            android:hint="Repetir Contraseña"
+            android:inputType="textPassword"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etContra"
+            tools:visibility="gone" />
+
+        <EditText
+            android:id="@+id/etClaveActual"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginTop="20dp"
+            android:ems="10"
+            android:inputType="textPassword"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.067"
+            app:layout_constraintStart_toEndOf="@+id/textView5"
+            app:layout_constraintTop_toBottomOf="@+id/etTel"
+            tools:visibility="gone" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="76dp"
+            android:text="Clave actual:"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvPerfil6"
+            tools:visibility="gone" />
+
+        <Button
+            android:id="@+id/btnGuardarClave"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Guardar Clave"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.183"
+            app:layout_constraintStart_toEndOf="@+id/btnGuardar"
+            app:layout_constraintTop_toBottomOf="@+id/etRepetirContra"
+            tools:visibility="gone" />
+
+        <Button
+            android:id="@+id/btnEditar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="48dp"
+            android:text="Editar"
+            android:visibility="visible"
+            app:layout_constraintEnd_toStartOf="@+id/btnCClave"
+            app:layout_constraintHorizontal_bias="0.396"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etTel"
+            tools:visibility="visible" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
