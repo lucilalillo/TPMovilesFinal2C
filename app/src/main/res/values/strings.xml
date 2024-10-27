@@ -54,4 +54,11 @@
     <string name="tv4">Importe</string>
     <string name="tv5">Fecha de Pago</string>
 
+    <string-array name="tipos">
+        <item>Local</item>
+        <item>Deposito</item>
+        <item>Casa</item>
+        <item>Departamento</item>
+        <item>Residencial</item>
+    </string-array>
 </resources>

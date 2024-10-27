@@ -18,7 +18,7 @@
             android:layout_height="100dp"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="20dp"
-            android:layout_marginRight="60dp"
+            android:layout_marginRight="120dp"
             android:visibility="visible"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -102,10 +102,10 @@
 
         <TextView
             android:id="@+id/tvPerfil1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="36dp"
-            android:layout_marginTop="160dp"
+            android:layout_width="70dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="52dp"
+            android:layout_marginTop="128dp"
             android:text="Dni"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -114,8 +114,8 @@
             android:id="@+id/tvPerfil2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="18dp"
+            android:layout_marginStart="52dp"
+            android:layout_marginTop="28dp"
             android:text="Nombre"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvPerfil1" />
@@ -124,8 +124,8 @@
             android:id="@+id/tvPerfil3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="18dp"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="48dp"
             android:text="Apellido"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvPerfil2" />
@@ -134,8 +134,8 @@
             android:id="@+id/tvPerfil4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="18dp"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="40dp"
             android:text="Email"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvPerfil3" />
@@ -144,8 +144,8 @@
             android:id="@+id/tvPerfil6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="18dp"
+            android:layout_marginStart="56dp"
+            android:layout_marginTop="40dp"
             android:text="Telefono"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvPerfil4" />

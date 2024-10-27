@@ -59,7 +59,7 @@ public class PerfilFragment extends Fragment {
                         .diskCacheStrategy(DiskCacheStrategy.ALL)
                         .into(ivProp);*/
                 Glide.with(getContext())
-                        .load("http://192.168.0.104:5001/"+propietario.getAvatar())
+                        .load("http://192.168.0.108:5001/"+propietario.getAvatar())
                         .placeholder(R.drawable.juan) //ponemos una imagen por defecto
                       //  .error(R.drawable.error) imagen por error
                         .diskCacheStrategy(DiskCacheStrategy.ALL) //cada vez q cargues imagen de propietario queda en cache

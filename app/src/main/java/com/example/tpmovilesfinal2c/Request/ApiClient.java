@@ -3,6 +3,8 @@ package com.example.tpmovilesfinal2c.Request;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.util.Log;
+
+import com.example.tpmovilesfinal2c.Modelo.Tipo;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -24,15 +26,17 @@ import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.Header;
+import retrofit2.http.Multipart;
 import retrofit2.http.PATCH;
 import retrofit2.http.POST;
 import retrofit2.http.PUT;
+import retrofit2.http.Part;
 import retrofit2.http.Path;
 ;
 
 public class ApiClient {
-
-    private static final String URLBASE="http://192.168.0.104:5001/";
+                                                          //104 living
+    private static final String URLBASE="http://192.168.0.108:5001/";
     private static  PostInterface postInterface;
     private static SharedPreferences sharedPreferences;
 
@@ -92,6 +96,15 @@ public class ApiClient {
         @GET("Inmuebles")
         Call<List<Inmueble>> listaInmuebles(@Header("Authorization") String token);
 
+        //guarda Inmueble nuevo
+        @Multipart
+        @POST("inmuebles/")
+        Call<Inmueble> crearInmueble(@Header("Authorization")String token,
+                                     @Part("imagen")byte[] url, @Part("direccion")String direccion,
+                                     @Part("ambientes")int ambientes, @Part("importe")int importe,
+                                     @Part("uso")String uso, @Part("tipoId")int tipoId,
+                                     @Part("disponible")boolean disponible);
+
         //cambiar estado disponible del inmueble
         //se usa en la vista detalle inmueble
         @PUT("Inmuebles/{id}")
@@ -101,6 +114,15 @@ public class ApiClient {
         //se usa en la vista de inquilinos y de contratos
         @GET("Contratos")
         Call<List<Contrato>> obtenerInmueblesAlquilados(@Header("Authorization") String token);
+
+        //agrega un nuevo inmueble del propietario logueado
+        //se usa en la vista detalle Inmueble
+        @Multipart
+        @POST("inmuebles/")
+        Call<Inmueble> crearInmueble(@Part("imagen")String url, @Field("direccion")String direccion,
+                                     @Field("ambientes")int ambientes, @Field("importe")int importe,
+                                     @Field("uso")String uso, @Field("tipoId")int tipoId,
+                                     @Field("disponible")boolean disponible);
 
         //este servicio devuelve una lista de inmuebles alquilados del usuario logueado
         //se usa en la vista Contrato
@@ -114,6 +136,11 @@ public class ApiClient {
         //devuelve una lista de los pagos de un contrato especifico. se usa en el boton de pagos
         @GET("Pagos/{id}")
         Call<List<Pago>> obtenerPagos(@Header("Authorization") String token, @Path ("id") int idCon);
+
+        //Tipos
+        //devuelve la lista de tipos para el spinner
+        @GET("tipos/listatipos")
+        Call<List<Tipo>> listaTipos(@Header("Authorization")String token);
 
     }
 
