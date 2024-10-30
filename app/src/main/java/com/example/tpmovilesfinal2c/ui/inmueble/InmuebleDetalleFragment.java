@@ -43,7 +43,7 @@ public class InmuebleDetalleFragment extends Fragment {
             @Override
             public void onChanged(Inmueble inmueble) {
                 Glide.with(getContext())
-                        .load("http://192.168.0.108:5001/"+inmueble.getImgUrl())
+                        .load("http://192.168.0.104:5001/"+inmueble.getImgUrl())
                         .diskCacheStrategy(DiskCacheStrategy.ALL)
                         .into(ivFotoDetInmu);
                 //tvDetId.setText(inmueble.getIdInmueble()+"");
