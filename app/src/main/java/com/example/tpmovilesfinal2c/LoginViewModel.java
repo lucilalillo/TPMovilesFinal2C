@@ -63,7 +63,7 @@ public class LoginViewModel extends AndroidViewModel {
 
                         @Override
                         public void onFailure(Call<Propietario> call, Throwable t) {
-
+                            Toast.makeText(context, "Error en Login " + t.getLocalizedMessage(), Toast.LENGTH_LONG).show();
                         }
                     });
                     visible.setValue(View.INVISIBLE);
