@@ -53,7 +53,9 @@
     <string name="tv3">Código de Contrato</string>
     <string name="tv4">Importe</string>
     <string name="tv5">Fecha de Pago</string>
-
+    <string name="link">
+        <a href="">Olvidé mi contraseña</a>
+    </string>
     <string-array name="tipos">
         <item>Local</item>
         <item>Deposito</item>

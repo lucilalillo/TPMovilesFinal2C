@@ -96,6 +96,12 @@ public class ApiClient {
         Call<Propietario> cambiarpass(@Header("Authorization")String token,
                                       @Field("clVieja")String cv,
                                       @Field("clNueva")String cn);
+
+        //olvide mi contraseña,se una en la vista login
+        @FormUrlEncoded
+        @POST("propietarios/email")
+        Call<String>resetearpass(@Field("email")String email);
+
         //obtiene listado de inmuebles
         @GET("Inmuebles")
         Call<List<Inmueble>> listaInmuebles(@Header("Authorization") String token);

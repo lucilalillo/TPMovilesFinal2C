@@ -15,16 +15,19 @@ import android.hardware.SensorManager;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.text.method.LinkMovementMethod;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.tpmovilesfinal2c.databinding.ActivityLoginBinding;
+
 public class Login extends AppCompatActivity implements SensorEventListener {
     EditText etEmail, etContraseña;
     Button btIngresar;
-    TextView tvError;
+    TextView tvError, tvLink;
     ImageView foto;
     private SensorManager senSensorManager;
     private Sensor senAccelerometer;
@@ -33,6 +36,7 @@ public class Login extends AppCompatActivity implements SensorEventListener {
     private static final int SHAKE_THRESHOLD = 600;
     private String phoneNumber = "1234";
     private LoginViewModel lvm;
+    private ActivityLoginBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +51,7 @@ public class Login extends AppCompatActivity implements SensorEventListener {
                 != PackageManager.PERMISSION_GRANTED) ;
 
         requestPermissions(new String[]{Manifest.permission.CALL_PHONE}, 1004);
+
         inicializarVista();
         lvm = ViewModelProvider.AndroidViewModelFactory.getInstance(getApplication()).create(LoginViewModel.class);
         lvm.getVisible().observe(this, new Observer<Integer>() {
@@ -63,7 +68,8 @@ public class Login extends AppCompatActivity implements SensorEventListener {
         //foto es para un posible logo de la inmobiliaria
         foto = findViewById(R.id.ivFoto);
         foto.setImageResource(R.drawable.logo);
-
+        tvLink = findViewById(R.id.tvLink);
+        tvLink.setMovementMethod(LinkMovementMethod.getInstance());
         btIngresar = findViewById(R.id.btIngresar);
         btIngresar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -72,8 +78,14 @@ public class Login extends AppCompatActivity implements SensorEventListener {
 
             }
         });
-    }
 
+        tvLink.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                lvm.RecuperarPass(etEmail.getText().toString());
+            }
+        });
+    }
     @Override
     public void onSensorChanged(SensorEvent event) {
         Sensor mySensor = event.sensor;
