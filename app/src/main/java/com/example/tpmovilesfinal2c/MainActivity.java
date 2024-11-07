@@ -1,11 +1,7 @@
 package com.example.tpmovilesfinal2c;
 
-import static android.Manifest.permission.ACCESS_COARSE_LOCATION;
-import static android.Manifest.permission.ACCESS_FINE_LOCATION;
-
 import android.Manifest;
 import android.content.pm.PackageManager;
-import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -16,9 +12,6 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.example.tpmovilesfinal2c.Modelo.Propietario;
-import com.example.tpmovilesfinal2c.ui.inmueble.InmueblesAdapter;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 
 import androidx.core.app.ActivityCompat;
@@ -30,8 +23,6 @@ import androidx.navigation.ui.NavigationUI;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 public class MainActivity extends AppCompatActivity {
     private static final int REQUEST_CODE = 101;
@@ -79,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
         TextView mail = header.findViewById(R.id.tvMail);
         Propietario p = (Propietario) getIntent().getBundleExtra("propietario").getSerializable("propietario");
         Glide.with(header.getContext())
-                .load("http://192.168.0.104:5001"+p.getAvatar())
+                .load("http://192.168.0.104:5001/"+p.getAvatarUrl())
                 .placeholder(R.drawable.sonia)
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .into(foto);

@@ -52,7 +52,7 @@ public class LoginViewModel extends AndroidViewModel {
                     pCall.enqueue(new Callback<Propietario>() {
                         @Override
                         public void onResponse(Call<Propietario> call, Response<Propietario> response) {
-                            if(response.isSuccessful()){
+                            if (response.isSuccessful()) {
                                 bundle.putSerializable("propietario", response.body());
                                 Intent intent = new Intent(context, MainActivity.class);
                                 intent.addFlags(FLAG_ACTIVITY_NEW_TASK);
@@ -66,15 +66,14 @@ public class LoginViewModel extends AndroidViewModel {
                             Toast.makeText(context, "Error en Login " + t.getLocalizedMessage(), Toast.LENGTH_LONG).show();
                         }
                     });
-                    visible.setValue(View.INVISIBLE);
+
                 } else {
-                    visible.setValue(View.VISIBLE);
+                    Toast.makeText(context, "Error en Login ", Toast.LENGTH_LONG).show();
                 }
             }
 
-
             @Override
-            public void onFailure(Call<String> call, Throwable t) {
+            public void onFailure(Call<String> token, Throwable t) {
                 Toast.makeText(context, "Error en Login " + t.getLocalizedMessage(), Toast.LENGTH_LONG).show();
             }
         });

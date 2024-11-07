@@ -12,7 +12,7 @@ public class Propietario implements Serializable {
     private String email;
     private String clave;
     private String telefono;
-    private String avatar;
+    private String avatarUrl;
 
     public Propietario() {}
     public Propietario(int id, String nombre, String apellido, String dni, String telefono, String email, String contraseña, String avatar) {
@@ -23,7 +23,7 @@ public class Propietario implements Serializable {
         this.email = email;
         this.clave = contraseña;
         this.telefono = telefono;
-        this.avatar=avatar;
+        this.avatarUrl =avatar;
     }
 
     public int getId() {
@@ -80,12 +80,12 @@ public class Propietario implements Serializable {
         this.telefono = telefono;
     }
 
-    public String getAvatar() {
-        return avatar;
+    public String getAvatarUrl() {
+        return avatarUrl;
     }
 
-    public void setAvatar(String avatar) {
-        this.avatar = avatar;
+    public void setAvatarUrl(String avatarUrl) {
+        this.avatarUrl = avatarUrl;
     }
 
     @Override

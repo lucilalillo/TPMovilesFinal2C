@@ -117,7 +117,7 @@ public class ApiClient {
 
         //cambiar estado disponible del inmueble
         //se usa en la vista detalle inmueble
-        @PUT("Inmuebles/{id}")
+        @PATCH("Inmuebles/{id}")
         Call<Inmueble> editarEstado(@Header("Authorization") String token, @Path("id")int id );
 
         //devuelve los inmuebles alquilados
