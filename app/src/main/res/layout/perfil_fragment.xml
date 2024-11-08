@@ -10,7 +10,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#00BCD4">
+        android:background="#abb3f5">
 
         <ImageView
             android:id="@+id/ivProp"

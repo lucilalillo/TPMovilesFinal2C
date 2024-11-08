@@ -4,13 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#2196F3"
+    android:backgroundTint="#abb3f5"
     tools:context=".ui.inmueble.InmuebleFragment">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvInmuebles"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:background="#abb3f5" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fabAgregarInmueble"

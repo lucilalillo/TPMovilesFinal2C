@@ -134,15 +134,6 @@ public class ApiClient {
                                      @Field("uso")String uso, @Field("tipoId")int tipoId,
                                      @Field("disponible")boolean disponible);
 
-        //este servicio devuelve una lista de inmuebles alquilados del usuario logueado
-        //se usa en la vista Contrato
-        @GET("Inmuebles/Alquilados")
-        Call<List<Inmueble>> obtenerPropiedadesAlquiladas(@Header("Authorization")  String token);
-
-        //Devuelve un contrato especifico, se usa en la vista detalle de contrato
-        @GET("Contratos/ObtenerContrato")
-        Call<Contrato> obtenerContratoVigente(@Header("Authorization")  String token, @Path ("id") int idCon);
-
         //devuelve una lista de los pagos de un contrato especifico. se usa en el boton de pagos
         @GET("Pagos/{id}")
         Call<List<Pago>> obtenerPagos(@Header("Authorization") String token, @Path ("id") int idCon);

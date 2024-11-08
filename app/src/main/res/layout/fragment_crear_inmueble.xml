@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#0DF6EE"
+    android:background="#abb3f5"
     tools:context=".ui.inmueble.InmuebleDetalleFragment">
 
     <ImageView
@@ -25,8 +25,8 @@
         android:layout_marginStart="35dp"
         android:layout_marginTop="28dp"
         android:layout_marginEnd="30dp"
-        android:textAlignment="center"
         android:hint="Dirección"
+        android:textAlignment="center"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -40,8 +40,8 @@
         android:layout_marginStart="35dp"
         android:layout_marginTop="30dp"
         android:layout_marginEnd="30dp"
-        android:textAlignment="center"
         android:hint="Uso"
+        android:textAlignment="center"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
