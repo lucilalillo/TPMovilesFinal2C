@@ -40,9 +40,7 @@ public class PagosViewModel extends AndroidViewModel {
 
     public void mostrarPagos(Bundle bundle) {
         Contrato c = (Contrato) bundle.getSerializable("pagos");
-        /*ApiClient api = ApiClient.getApi();
-        ArrayList<Pago> p = api.obtenerPagos(c);
-        pagos.setValue(p);*/
+
         SharedPreferences sp = ApiClient.conectar(context);
         String token = sp.getString("token","-1");
         Call<List<Pago>> pag = ApiClient.getMyApiClient().obtenerPagos(token, c.getIdContrato());

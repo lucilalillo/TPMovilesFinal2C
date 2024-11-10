@@ -4,11 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    app:cardBackgroundColor="#0DF6EE"
+    android:layout_marginBottom="4dp"
+    app:cardBackgroundColor="#caeff5"
     app:cardCornerRadius="20dp"
     app:cardElevation="10dp"
-    app:contentPadding="20dp"
-    android:layout_marginBottom="4dp">
+    app:contentPadding="20dp">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -40,6 +40,7 @@
             android:id="@+id/btInqVer"
             android:layout_width="75dp"
             android:layout_height="63dp"
+            android:backgroundTint="#87d5e1"
             android:text="@string/btVer"
             android:textColor="#101010"
             app:layout_constraintBottom_toBottomOf="parent"

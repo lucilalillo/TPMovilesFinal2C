@@ -207,26 +207,16 @@
             android:id="@+id/etClaveActual"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
+            android:layout_marginStart="35dp"
             android:layout_marginTop="20dp"
+            android:layout_marginEnd="30dp"
             android:ems="10"
+            android:hint="Ingrese clave actual"
             android:inputType="textPassword"
             android:visibility="gone"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.067"
-            app:layout_constraintStart_toEndOf="@+id/textView5"
-            app:layout_constraintTop_toBottomOf="@+id/etTel"
-            tools:visibility="gone" />
-
-        <TextView
-            android:id="@+id/textView5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="76dp"
-            android:text="Clave actual:"
-            android:visibility="gone"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvPerfil6"
+            app:layout_constraintTop_toBottomOf="@+id/etTel"
             tools:visibility="gone" />
 
         <Button
