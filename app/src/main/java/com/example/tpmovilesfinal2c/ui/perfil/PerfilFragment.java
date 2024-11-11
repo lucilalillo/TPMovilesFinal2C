@@ -151,7 +151,7 @@ public class PerfilFragment extends Fragment {
                 etRepetirContra.setVisibility(View.GONE);
                 etClaveActual.setVisibility(View.GONE);
                 btCambiarClave.setVisibility(View.VISIBLE);
-                btGuardar.setVisibility(View.VISIBLE);
+                btGuardar.setVisibility(View.INVISIBLE);
                 btGuardarClave.setVisibility(View.GONE);
                 btEditar.setVisibility(View.VISIBLE);
             }

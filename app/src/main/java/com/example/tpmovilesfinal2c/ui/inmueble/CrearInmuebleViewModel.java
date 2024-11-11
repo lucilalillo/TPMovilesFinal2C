@@ -125,7 +125,6 @@ public class CrearInmuebleViewModel extends AndroidViewModel {
             @Override
             public void onFailure(Call<Inmueble> call, Throwable throwable) {
                 Toast.makeText(context, "Error al guardar inmueble", Toast.LENGTH_LONG).show();
-                Log.d("salida",throwable.getMessage());
             }
         });
 

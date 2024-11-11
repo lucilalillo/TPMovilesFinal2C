@@ -7,6 +7,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -81,10 +82,11 @@ public class LoginViewModel extends AndroidViewModel {
 
     public void RecuperarPass(String email){
         Call<String> call = ApiClient.getMyApiClient().resetearpass(email);
+
         call.enqueue(new Callback<String>() {
             @Override
             public void onResponse(Call<String> call, Response<String> response) {
-                Toast.makeText(context, "Email enviado con exito revise su correo.",
+                Toast.makeText(context, "Email enviado con exito, revise su correo.",
                         Toast.LENGTH_LONG).show();
             }
 
